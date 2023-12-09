@@ -5201,7 +5201,7 @@
   "command" : "shuffle",
   "user" : "emily30",
   "timestamp" : 6674,
-  "message" : "The loaded source is not a playlist."
+  "message" : "Shuffle function deactivated successfully."
 }, {
   "command" : "status",
   "user" : "emily30",
@@ -5295,7 +5295,7 @@
   "command" : "shuffle",
   "user" : "frank21",
   "timestamp" : 6985,
-  "message" : "The loaded source is not a playlist."
+  "message" : "Shuffle function deactivated successfully."
 }, {
   "command" : "status",
   "user" : "frank21",
@@ -5389,7 +5389,7 @@
   "command" : "shuffle",
   "user" : "grace25",
   "timestamp" : 7296,
-  "message" : "The loaded source is not a playlist."
+  "message" : "Shuffle function deactivated successfully."
 }, {
   "command" : "status",
   "user" : "grace25",
@@ -5577,7 +5577,7 @@
   "command" : "shuffle",
   "user" : "irene33",
   "timestamp" : 7918,
-  "message" : "The loaded source is not a playlist."
+  "message" : "Shuffle function deactivated successfully."
 }, {
   "command" : "status",
   "user" : "irene33",

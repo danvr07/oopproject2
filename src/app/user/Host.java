@@ -4,6 +4,7 @@ import app.audio.Collections.Podcast;
 import app.info.Announcement;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Host extends User {
 
@@ -52,5 +53,9 @@ public class Host extends User {
 
     public ArrayList<Podcast> getPodcasts() {
         return podcasts;
+    }
+
+    public List<Announcement> getAnnouncements() {
+        return announcements;
     }
 }
