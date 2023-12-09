@@ -78,7 +78,7 @@ public final class Main {
                                                                   CommandInput[].class);
         ArrayNode outputs = objectMapper.createArrayNode();
 
-//                if(!(CheckerConstants.TESTS_PATH + filePath1).equals(CheckerConstants.TESTS_PATH + "test04_etapa2.json")) {
+//                if(!(CheckerConstants.TESTS_PATH + filePath1).equals(CheckerConstants.TESTS_PATH + "test05_etapa2_playPause_playlist_podcast.json")) {
 //           // System.out.println(CheckerConstants.TESTS_PATH + filePath1);
 //            return;
 //        }
@@ -125,6 +125,10 @@ public final class Main {
                 case "addMerch" -> outputs.add(CommandRunner.addMerch(command));
                 case "getAllUsers" -> outputs.add(CommandRunner.getAllUsers(command));
                 case "deleteUser" -> outputs.add(CommandRunner.deleteUser(command));
+                case "addPodcast" -> outputs.add(CommandRunner.addPodcast(command));
+                case "addAnnouncement" -> outputs.add(CommandRunner.addAnnouncement(command));
+                case "removeAnnouncement" -> outputs.add(CommandRunner.removeAnnouncement(command));
+                case "showPodcasts" -> outputs.add(CommandRunner.showPodcasts(command));
                 default -> System.out.println("Invalid command " + commandName);
             }
         }

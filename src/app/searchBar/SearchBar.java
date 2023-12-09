@@ -129,17 +129,24 @@ public final class SearchBar {
                     entries = filterByName(entries, filters.getName());
                 }
                 break;
-                case "album":
+            case "album":
                 entries = new ArrayList<>(Admin.getAlbums());
                 if (filters.getName() != null) {
                     entries = filterByName(entries, filters.getName());
                 }
-                if(filters.getOwner() != null){
+                if (filters.getOwner() != null) {
                     entries = filterByOwner(entries, filters.getOwner());
                 }
 
                 //
 
+                break;
+
+            case "host":
+                entries = new ArrayList<>(Admin.getHosts());
+                if (filters.getName() != null) {
+                    entries = filterByName(entries, filters.getName());
+                }
                 break;
             default:
                 entries = new ArrayList<>();
@@ -166,7 +173,7 @@ public final class SearchBar {
 
             return null;
         } else {
-            lastSelected =  this.results.get(itemNumber - 1);
+            lastSelected = this.results.get(itemNumber - 1);
             results.clear();
 
             return lastSelected;

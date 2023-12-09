@@ -143,14 +143,18 @@ public class User extends LibraryEntry {
 
         LibraryEntry selected = searchBar.select(itemNumber);
       //  System.out.println(selected.getName());
+       // System.out.println(selected.getName());
 
         if(selected!= null && selected.isArtist()) {
             this.currentPage = ((Artist) selected).getCurrentPage();
+        } else if(selected!= null && selected.isHost()) {
+            System.out.println("host");
+            this.currentPage = ((Host) selected).getCurrentPage();
         }
 
         if (selected == null)
             return "The selected ID is too high.";
-        if(selected.isArtist()) {
+        if(selected.isArtist() || selected.isHost()) {
             return "Successfully selected %s's page.".formatted(selected.getName());
         } else {
             return "Successfully selected %s.".formatted(selected.getName());

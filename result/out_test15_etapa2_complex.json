@@ -4861,7 +4861,7 @@
 }, {
   "command" : "getOnlineUsers",
   "timestamp" : 5419,
-  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "barmstrong", "nancymontgomery", "conniealvarez", "jenningsbeth", "charlesgarcia" ]
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "barmstrong" ]
 }, {
   "command" : "shuffle",
   "user" : "alice22",
@@ -4955,7 +4955,7 @@
 }, {
   "command" : "getOnlineUsers",
   "timestamp" : 5730,
-  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "nancymontgomery", "conniealvarez", "jenningsbeth", "charlesgarcia" ]
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29" ]
 }, {
   "command" : "shuffle",
   "user" : "bob35",
@@ -5049,7 +5049,7 @@
 }, {
   "command" : "getOnlineUsers",
   "timestamp" : 6041,
-  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "barmstrong", "nancymontgomery", "conniealvarez", "jenningsbeth", "charlesgarcia" ]
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "barmstrong" ]
 }, {
   "command" : "deleteUser",
   "user" : "cbutler",
@@ -5148,7 +5148,7 @@
 }, {
   "command" : "getOnlineUsers",
   "timestamp" : 6352,
-  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "nancymontgomery", "conniealvarez", "jenningsbeth", "charlesgarcia" ]
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29" ]
 }, {
   "command" : "shuffle",
   "user" : "david27",
@@ -5242,7 +5242,7 @@
 }, {
   "command" : "getOnlineUsers",
   "timestamp" : 6663,
-  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "barmstrong", "nancymontgomery", "conniealvarez", "jenningsbeth", "charlesgarcia" ]
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "barmstrong" ]
 }, {
   "command" : "shuffle",
   "user" : "emily30",
@@ -5336,7 +5336,7 @@
 }, {
   "command" : "getOnlineUsers",
   "timestamp" : 6974,
-  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "nancymontgomery", "conniealvarez", "jenningsbeth", "charlesgarcia" ]
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29" ]
 }, {
   "command" : "shuffle",
   "user" : "frank21",
@@ -5430,7 +5430,7 @@
 }, {
   "command" : "getOnlineUsers",
   "timestamp" : 7285,
-  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "barmstrong", "nancymontgomery", "conniealvarez", "jenningsbeth", "charlesgarcia" ]
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "barmstrong" ]
 }, {
   "command" : "shuffle",
   "user" : "grace25",
@@ -5524,7 +5524,7 @@
 }, {
   "command" : "getOnlineUsers",
   "timestamp" : 7596,
-  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "nancymontgomery", "conniealvarez", "jenningsbeth", "charlesgarcia" ]
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29" ]
 }, {
   "command" : "shuffle",
   "user" : "henry26",
@@ -5618,7 +5618,7 @@
 }, {
   "command" : "getOnlineUsers",
   "timestamp" : 7907,
-  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "barmstrong", "nancymontgomery", "conniealvarez", "jenningsbeth", "charlesgarcia" ]
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "barmstrong" ]
 }, {
   "command" : "shuffle",
   "user" : "irene33",
@@ -5712,7 +5712,7 @@
 }, {
   "command" : "getOnlineUsers",
   "timestamp" : 8218,
-  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "nancymontgomery", "conniealvarez", "jenningsbeth", "charlesgarcia" ]
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29" ]
 }, {
   "command" : "shuffle",
   "user" : "jack29",
@@ -23606,7 +23606,7 @@
 }, {
   "command" : "getAllUsers",
   "timestamp" : 14849,
-  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "nancymontgomery", "conniealvarez", "jenningsbeth", "charlesgarcia", "barmstrong", "matthewporter", "amanda16", "cbutler", "jacobdean", "matthewfernandez", "leslie27" ]
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "barmstrong", "matthewporter", "amanda16", "cbutler", "jacobdean", "matthewfernandez", "leslie27" ]
 }, {
   "command" : "getTop5Playlists",
   "timestamp" : 14849,

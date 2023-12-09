@@ -7,8 +7,10 @@ import app.audio.Files.Episode;
 import app.audio.Files.Song;
 import app.pageSystem.ArtistPage;
 import app.pageSystem.HomePage;
+import app.pageSystem.HostPage;
 import app.pageSystem.Page;
 import app.user.Artist;
+import app.user.Host;
 import app.user.User;
 import fileio.input.EpisodeInput;
 import fileio.input.PodcastInput;
@@ -18,6 +20,7 @@ import fileio.input.UserInput;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static app.user.User.lastloaded;
 import static app.user.User.userloaded;
@@ -205,6 +208,9 @@ public final class Admin {
                 user = new Artist(username, age, city, online, type);
                 user.setCurrentPage(new ArtistPage(user));
                 // user.setCurrentPage(new HomePage(user));
+            } else if (type.equals("host")) {
+                user = new Host(username, age, city, online, type);
+                user.setCurrentPage(new HostPage(user));
             } else {
                 user = new User(username, age, city);
                 user.setCurrentPage(new HomePage(user));
@@ -240,9 +246,10 @@ public final class Admin {
         for (User user : users) {
             if (user.getUsername().equals(username)) {
 
-                String arstist = ((Song) lastloaded).getArtist();
+
                 if (user.getType().equals("artist")) {
                     Artist artist = (Artist) user;
+                    String arstist = ((Song) lastloaded).getArtist();
 
                     if (arstist.equals(username) && userloaded.getPlayer().getPaused()) {
 //                        getAlbums().removeIf(album -> album.getOwner().equals(username));
@@ -268,6 +275,21 @@ public final class Admin {
         }
         return "The user " + username + " does not exist.";
     }
+
+//    public static String showPodcasts( String username) {
+//        for (User user : users) {
+//            if (user.getUsername().equals(username)) {
+//                Host host = (Host) user;
+//                List<String> result = new ArrayList<>();
+//                for (Podcast podcast : host.getPodcasts()) {
+//
+//                }
+//                return result.toString();
+//
+//            }
+//        }
+//        return "The user " + username + " does not exist.";
+//    }
 
     public static void updateSongs(Artist artist, String username) {
         getAlbums().removeIf(album -> album.getOwner().equals(username));
@@ -308,6 +330,20 @@ public final class Admin {
             }
         }
         return albums;
+    }
+
+    public static void addPodcast(Podcast podcast) {
+        podcasts.add(podcast);
+    }
+
+    public static ArrayList<Host> getHosts() {
+        ArrayList<Host> hosts = new ArrayList<>();
+        for (User user : users) {
+            if (user.getType().equals("host")) {
+                hosts.add((Host) user);
+            }
+        }
+        return hosts;
     }
 
 

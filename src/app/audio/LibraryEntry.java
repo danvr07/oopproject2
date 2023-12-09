@@ -14,6 +14,12 @@ public abstract class LibraryEntry {
         return false;
     }
 
+
+    public boolean isHost() {
+        return false;
+    }
+
+
     private final String name;
 
     /**
