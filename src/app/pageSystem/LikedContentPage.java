@@ -7,12 +7,10 @@ import app.user.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LikedContentPage extends Page{
+public class LikedContentPage extends Page {
 
     private List<Song> likedSongs;
     private List<Playlist> followedPlaylists;
-
-
 
 
     public LikedContentPage(User user) {
@@ -34,7 +32,7 @@ public class LikedContentPage extends Page{
             playlists.add(playlistDetails);
         }
         return
-                "Liked songs:\n\t" + songs + "\n\n" +
-                        "Followed playlists:\n\t" + playlists;
+                "Liked songs:\n\t" + songs + "\n\n"
+                        + "Followed playlists:\n\t" + playlists;
     }
 }

@@ -12,11 +12,11 @@ import java.util.List;
 import static app.Admin.getUser;
 
 public class ArtistPage extends Page {
-    String username;
-    List<Album> albums;
-    List<Merch> merchs;
+    private String username;
+    private List<Album> albums;
+    private List<Merch> merchs;
 
-    List<Event> events;
+    private List<Event> events;
 
 
     public ArtistPage(User user) {
@@ -38,20 +38,22 @@ public class ArtistPage extends Page {
         }
         List<String> merchsNames = new ArrayList<>();
         for (Merch merch : merchs) {
-            String merchString = String.format("%s - %s:\n\t%s", merch.getName(), merch.getPrice(), merch.getDescription());
+            String merchString = String.format("%s - %s:\n\t%s", merch
+                    .getName(), merch.getPrice(), merch.getDescription());
             merchsNames.add(merchString);
         }
 
         List<String> eventsNames = new ArrayList<>();
         for (Event event : events) {
-            String eventString = String.format("%s - %s:\n\t%s", event.getName(), artist.formatDate(event.getDate()), event.getDescription());
+            String eventString = String.format("%s - %s:\n\t%s", event.getName(), artist
+                    .formatDate(event.getDate()), event.getDescription());
             eventsNames.add(eventString);
         }
 
         return
-                "Albums:\n\t" + albumsNames + "\n\n" +
-                        "Merch:\n\t" + merchsNames + "\n\n" +
-                        "Events:\n\t" + eventsNames;
+                "Albums:\n\t" + albumsNames + "\n\n"
+                        + "Merch:\n\t" + merchsNames + "\n\n"
+                        + "Events:\n\t" + eventsNames;
     }
 
 }

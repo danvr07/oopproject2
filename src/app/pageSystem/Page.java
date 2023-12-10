@@ -5,7 +5,7 @@ import app.user.User;
 public class Page {
     private User user;
 
-    public Page(User user) {
+    public Page(final User user) {
         this.user = user;
     }
 
@@ -14,7 +14,7 @@ public class Page {
     }
 
     public String printPage() {
-        return "Pagina de conținuturi favorite pentru utilizatorul " + user.getUsername();
+        return "Pagina de conținuturi" + user.getUsername();
     }
 
 }

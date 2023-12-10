@@ -12,11 +12,11 @@ import static app.Admin.getUser;
 
 public class HostPage extends Page {
 
-    String username;
+    private String username;
 
-    List<Podcast> podcasts;
+    private List<Podcast> podcasts;
 
-    List<Announcement> announcements;
+    private List<Announcement> announcements;
 
     public HostPage(User user) {
         super(user);
@@ -39,7 +39,8 @@ public class HostPage extends Page {
 
             List<Episode> episodes = podcast.getEpisodes();
             for (Episode episode : episodes) {
-                result.append(String.format("%s - %s, ", episode.getName(), episode.getDescription()));
+                result.append(String.format("%s - %s, ", episode
+                        .getName(), episode.getDescription()));
             }
 
             if (!episodes.isEmpty()) {
@@ -58,7 +59,8 @@ public class HostPage extends Page {
         result.append("Announcements:\n\t[");
         List<Announcement> announcements = host.getAnnouncements();
         for (Announcement announcement : announcements) {
-            result.append(String.format("%s:\n\t%s\n, ", announcement.getName(), announcement.getDescription()));
+            result.append(String.format("%s:\n\t%s\n, ", announcement
+                    .getName(), announcement.getDescription()));
         }
 
         if (!announcements.isEmpty()) {

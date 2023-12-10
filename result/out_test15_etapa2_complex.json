@@ -129,6 +129,9 @@
   "timestamp" : 125,
   "message" : "jacobdean has the same song at least twice in this album."
 }, {
+  "command" : "addAlbum",
+  "user" : "charlesgarcia",
+  "timestamp" : 126,
   "message" : "The username charlesgarcia is not an artist."
 }, {
   "command" : "addAlbum",
@@ -146,8 +149,14 @@
   "timestamp" : 129,
   "message" : "amanda16 has added new album successfully."
 }, {
+  "command" : "addAlbum",
+  "user" : "jenningsbeth",
+  "timestamp" : 130,
   "message" : "The username jenningsbeth is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 131,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
@@ -155,6 +164,9 @@
   "timestamp" : 132,
   "message" : "leslie27 has added new album successfully."
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 133,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
@@ -162,10 +174,19 @@
   "timestamp" : 134,
   "message" : "matthewfernandez has added new album successfully."
 }, {
+  "command" : "addAlbum",
+  "user" : "jenningsbeth",
+  "timestamp" : 135,
   "message" : "The username jenningsbeth is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 136,
   "message" : "The username conniealvarez is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "nancymontgomery",
+  "timestamp" : 137,
   "message" : "The username nancymontgomery is not an artist."
 }, {
   "command" : "addAlbum",
@@ -188,6 +209,9 @@
   "timestamp" : 141,
   "message" : "leslie27 has added new album successfully."
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 142,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
@@ -210,6 +234,9 @@
   "timestamp" : 146,
   "message" : "amanda16 has added new album successfully."
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 147,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
@@ -217,8 +244,14 @@
   "timestamp" : 148,
   "message" : "cbutler has the same song at least twice in this album."
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 149,
   "message" : "The username conniealvarez is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 150,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
@@ -226,6 +259,9 @@
   "timestamp" : 151,
   "message" : "barmstrong has the same song at least twice in this album."
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 152,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
@@ -253,6 +289,9 @@
   "timestamp" : 157,
   "message" : "amanda16 has added new album successfully."
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 158,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
@@ -265,6 +304,9 @@
   "timestamp" : 160,
   "message" : "barmstrong has added new album successfully."
 }, {
+  "command" : "addAlbum",
+  "user" : "jenningsbeth",
+  "timestamp" : 161,
   "message" : "The username jenningsbeth is not an artist."
 }, {
   "command" : "addAlbum",
@@ -277,6 +319,9 @@
   "timestamp" : 163,
   "message" : "barmstrong has added new album successfully."
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 164,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
@@ -284,10 +329,19 @@
   "timestamp" : 165,
   "message" : "leslie27 has added new album successfully."
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 166,
   "message" : "The username conniealvarez is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "jenningsbeth",
+  "timestamp" : 167,
   "message" : "The username jenningsbeth is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 168,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
@@ -300,6 +354,9 @@
   "timestamp" : 170,
   "message" : "matthewfernandez has added new album successfully."
 }, {
+  "command" : "addAlbum",
+  "user" : "jenningsbeth",
+  "timestamp" : 171,
   "message" : "The username jenningsbeth is not an artist."
 }, {
   "command" : "addAlbum",
@@ -18175,6 +18232,9 @@
   "timestamp" : 11819,
   "message" : "Liked songs:\n\t[Stairway to Heaven, Whatever You Need]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 11819,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "frank21",
@@ -18352,6 +18412,9 @@
   "timestamp" : 11869,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 11869,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "alice22",
@@ -18637,6 +18700,9 @@
   "timestamp" : 11949,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 11949,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "irene33",
@@ -18958,6 +19024,9 @@
   "timestamp" : 12039,
   "message" : "Liked songs:\n\t[Angie]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12039,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "henry26",
@@ -19135,6 +19204,9 @@
   "timestamp" : 12089,
   "message" : "Liked songs:\n\t[Stairway to Heaven]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12089,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "carol19",
@@ -19240,6 +19312,9 @@
   "timestamp" : 12119,
   "message" : "Liked songs:\n\t[Stairway to Heaven, Whatever You Need]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12119,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "frank21",
@@ -19309,6 +19384,9 @@
   "timestamp" : 12139,
   "message" : "Liked songs:\n\t[Angie]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12139,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "henry26",
@@ -19378,6 +19456,9 @@
   "timestamp" : 12159,
   "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12159,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "jack29",
@@ -19735,6 +19816,9 @@
   "timestamp" : 12259,
   "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12259,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "jack29",
@@ -19840,6 +19924,9 @@
   "timestamp" : 12289,
   "message" : "Liked songs:\n\t[Stairway to Heaven]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12289,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "carol19",
@@ -19873,6 +19960,9 @@
   "timestamp" : 12299,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "jenningsbeth",
+  "timestamp" : 12299,
   "message" : "The username jenningsbeth is not an artist."
 }, {
   "user" : "david27",
@@ -20014,6 +20104,9 @@
   "timestamp" : 12339,
   "message" : "Liked songs:\n\t[Angie]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12339,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "henry26",
@@ -20155,6 +20248,9 @@
   "timestamp" : 12379,
   "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12379,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "bob35",
@@ -20476,6 +20572,9 @@
   "timestamp" : 12469,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12469,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "alice22",
@@ -20581,6 +20680,9 @@
   "timestamp" : 12499,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12499,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "david27",
@@ -20614,6 +20716,9 @@
   "timestamp" : 12509,
   "message" : "Liked songs:\n\t[Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12509,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "emily30",
@@ -20719,6 +20824,9 @@
   "timestamp" : 12539,
   "message" : "Liked songs:\n\t[Angie]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12539,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "henry26",
@@ -20752,6 +20860,9 @@
   "timestamp" : 12549,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12549,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "irene33",
@@ -21073,6 +21184,9 @@
   "timestamp" : 12639,
   "message" : "Liked songs:\n\t[Angie]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12639,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "henry26",
@@ -21394,6 +21508,9 @@
   "timestamp" : 12729,
   "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12729,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "grace25",
@@ -21895,6 +22012,9 @@
   "timestamp" : 12869,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12869,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "alice22",
@@ -22252,6 +22372,9 @@
   "timestamp" : 12969,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12969,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "alice22",
@@ -22357,6 +22480,9 @@
   "timestamp" : 12999,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 12999,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "david27",
@@ -22786,6 +22912,9 @@
   "timestamp" : 13119,
   "message" : "Liked songs:\n\t[Stairway to Heaven, Whatever You Need]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "conniealvarez",
+  "timestamp" : 13119,
   "message" : "The username conniealvarez is not an artist."
 }, {
   "user" : "frank21",
@@ -22819,6 +22948,9 @@
   "timestamp" : 13129,
   "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "jenningsbeth",
+  "timestamp" : 13129,
   "message" : "The username jenningsbeth is not an artist."
 }, {
   "user" : "grace25",
@@ -25915,4 +26047,8 @@
   "command" : "getTop5Songs",
   "timestamp" : 14849,
   "result" : [ "Stairway to Heaven", "Money Trees", "Under Pressure", "Dream On", "Whatever You Need" ]
+}, {
+  "command" : "getTop5Albums",
+  "timestamp" : 14849,
+  "result" : [ "Teen Technology", "Chill Hood", "Blue Dirt", "Groovy Revolution", "Alone View" ]
 } ]

@@ -91,7 +91,8 @@
 }, {
   "command" : "addAnnouncement",
   "user" : "alice22",
-  "timestamp" : 67
+  "timestamp" : 67,
+  "message" : "alice22 is not a host."
 }, {
   "command" : "load",
   "user" : "alice22",
@@ -194,6 +195,11 @@
   "timestamp" : 3230,
   "message" : "Successfully added to playlist."
 }, {
+  "command" : "removePodcast",
+  "user" : "soundseeker",
+  "timestamp" : 3233,
+  "message" : "soundseeker doesn't have a podcast with the given name."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 3235,
@@ -204,6 +210,11 @@
   "user" : "alice22",
   "timestamp" : 3240,
   "message" : "Successfully selected Happier."
+}, {
+  "command" : "removePodcast",
+  "user" : "soundseeker",
+  "timestamp" : 3243,
+  "message" : "soundseeker deleted the podcast successfully."
 }, {
   "command" : "load",
   "user" : "alice22",
@@ -231,9 +242,6 @@
   "result" : [ {
     "name" : "Auditory Adventures",
     "episodes" : [ "Exploring Sonic Landscapes", "The Future of Music Technology", "Cultural Beats" ]
-  }, {
-    "name" : "Harmony & History",
-    "episodes" : [ "The Roots of Blues", "Classical Music's Modern Impact", "Jazz Journeys", "The Folk Revival" ]
   } ]
 }, {
   "command" : "follow",

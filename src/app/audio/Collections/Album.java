@@ -13,6 +13,20 @@ public class Album extends AudioCollection {
     private int releaseYear;
     private List<SongInput> songs;
 
+    private int likes;
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public List<SongInput> getSongs() {
+        return songs;
+    }
+
     public Album(String name, String owner, int releaseYear, List<SongInput> songs) {
         super(name, owner);
         this.releaseYear = releaseYear;

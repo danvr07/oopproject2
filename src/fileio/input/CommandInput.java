@@ -55,9 +55,9 @@ public final class CommandInput {
         this.releaseYear = releaseYear;
     }
 
-    private  Integer age;
+    private Integer age;
 
-    private  Integer price;
+    private Integer price;
     private String nextPage;  // Adăugați câmpul "nextPage"
 
     public String getNextPage() {
@@ -115,6 +115,7 @@ public final class CommandInput {
 
     public CommandInput() {
     }
+
     public String getType() {
         return type;
     }
@@ -197,17 +198,17 @@ public final class CommandInput {
 
     @Override
     public String toString() {
-        return "CommandInput{" +
-                "command='" + command + '\'' +
-                ", username='" + username + '\'' +
-                ", timestamp=" + timestamp +
-                ", type='" + type + '\'' +
-                ", filters=" + filters +
-                ", itemNumber=" + itemNumber +
-                ", repeatMode=" + repeatMode +
-                ", playlistId=" + playlistId +
-                ", playlistName='" + playlistName + '\'' +
-                ", seed=" + seed +
-                '}';
+        return "CommandInput{"
+                + "command='" + command + '\''
+                + ", username='" + username + '\''
+                + ", timestamp=" + timestamp
+                + ", type='" + type + '\''
+                + ", filters=" + filters
+                + ", itemNumber=" + itemNumber
+                + ", repeatMode=" + repeatMode
+                + ", playlistId=" + playlistId
+                + ", playlistName='" + playlistName + '\''
+                + ", seed=" + seed
+                + '}';
     }
 }

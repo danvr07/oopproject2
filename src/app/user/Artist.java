@@ -8,9 +8,24 @@ import app.info.Merch;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Artist extends User {
+
+    private static final int MIN_DAY = 1;
+    private static final int MAX_DAY = 31;
+    private static final int MIN_MONTH = 1;
+    private static final int MAX_MONTH = 12;
+    private static final int MIN_YEAR = 1900;
+    private static final int MAX_YEAR = 2023;
+
+    private static final int MONTH_FEB = 2;
+
+    private static final int DAY_FEB = 28;
 
     ArrayList<Album> albums;
     ArrayList<Event> events;
@@ -33,11 +48,13 @@ public class Artist extends User {
 
 
     public String addAllbum(Album album) {
-        if (albums.stream().anyMatch(existingAlbum -> existingAlbum.getName().equals(album.getName()))) {
+        if (albums.stream().anyMatch(existingAlbum -> existingAlbum.getName()
+                .equals(album.getName()))) {
             return " has another album with the same name.";
         } else {
             Set<String> uniqueSongNames = new HashSet<>();
-            if (album.getAllSongs().stream().anyMatch(song -> !uniqueSongNames.add(song.getName()))) {
+            if (album.getAllSongs().stream().anyMatch(song -> !uniqueSongNames
+                    .add(song.getName()))) {
                 return " has the same song at least twice in this album.";
             } else {
                 albums.add(album);
@@ -73,12 +90,13 @@ public class Artist extends User {
         int month = Integer.parseInt(new SimpleDateFormat("MM").format(date));
         int year = Integer.parseInt(new SimpleDateFormat("yyyy").format(date));
 
-        if (day < 1 || day > 31 || month < 1 || month > 12 || year < 1900 || year > 2023) {
+        if (day < MIN_DAY || day > MAX_DAY || month < MIN_MONTH
+                || month > MAX_MONTH || year < MIN_YEAR || year > MAX_YEAR) {
             throw new IllegalArgumentException("Invalid date values.");
         }
 
         // februarie
-        if (month == 2 && day > 28) {
+        if (month == DAY_FEB && day > MONTH_FEB) {
             throw new IllegalArgumentException("Invalid date for February.");
         }
 
@@ -130,13 +148,14 @@ public class Artist extends User {
         for (User user : Admin.getUsers()) {
             //System.out.println(user.getUsername());
             if (user.getPlayer().getSource() != null && !user.getPlayer().getPaused()) {
-              //  System.out.println(user.getPlayer().getSource().getAudioFile().getName());
+                //  System.out.println(user.getPlayer().getSource().getAudioFile().getName());
                 loadetSongs.add(user.getPlayer().getSource().getAudioFile().getName());
             }
         }
-        for(Album album : this.getAlbums()) {
-            if(album.getName().equals(name) ) {
-                if(album.getAllSongs().stream().anyMatch(song -> loadetSongs.contains(song.getName()))) {
+        for (Album album : this.getAlbums()) {
+            if (album.getName().equals(name)) {
+                if (album.getAllSongs().stream().anyMatch(song -> loadetSongs
+                        .contains(song.getName()))) {
                     return getUsername() + " can't delete this album.";
                 } else {
                     albums.remove(album);

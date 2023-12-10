@@ -235,6 +235,11 @@
   "timestamp" : 975,
   "message" : "The user sonicpainter does not exist."
 }, {
+  "command" : "removePodcast",
+  "user" : "musicmaven",
+  "timestamp" : 980,
+  "message" : "musicmaven deleted the podcast successfully."
+}, {
   "command" : "deleteUser",
   "user" : "audiosage",
   "timestamp" : 1100,

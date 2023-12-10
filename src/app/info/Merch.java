@@ -1,6 +1,6 @@
 package app.info;
 
-public class Merch{
+public class Merch {
 
     String name;
     String description;

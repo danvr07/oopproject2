@@ -47,6 +47,7 @@ public class User extends LibraryEntry {
     private Page currentPage;
 
     public static LibraryEntry lastloaded;
+    public static LibraryEntry lastplayed;
 
     public static User userloaded;
 
@@ -150,7 +151,6 @@ public class User extends LibraryEntry {
         if (selected != null && selected.isArtist()) {
             this.currentPage = ((Artist) selected).getCurrentPage();
         } else if (selected != null && selected.isHost()) {
-            System.out.println("host");
             this.currentPage = ((Host) selected).getCurrentPage();
         }
 
@@ -177,6 +177,7 @@ public class User extends LibraryEntry {
                 && ((AudioCollection) searchBar.getLastSelected()).getNumberOfTracks() == 0) {
             return "You can't load an empty audio collection!";
         }
+        lastplayed = searchBar.getLastSelected();
 
         player.setSource(searchBar.getLastSelected(), searchBar.getLastSearchType());
         searchBar.clearSelection();

@@ -12,7 +12,7 @@ public class HomePage extends Page {
     private List<Song> likedSongs;
     private List<Playlist> followedPlaylists;
 
-    public HomePage(User user) {
+    public HomePage(final User user) {
         super(user);
         this.likedSongs = user.getLikedSongs();
         this.followedPlaylists = user.getFollowedPlaylists();
@@ -30,8 +30,8 @@ public class HomePage extends Page {
             playlists.add(playlist.getName());
         }
         return
-                "Liked songs:\n\t" + songs + "\n\n" +
-                        "Followed playlists:\n\t" + playlists;
+                "Liked songs:\n\t" + songs + "\n\n"
+                        + "Followed playlists:\n\t" + playlists;
     }
 
 }

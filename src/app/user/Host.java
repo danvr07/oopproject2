@@ -25,7 +25,8 @@ public class Host extends User {
     }
 
     public String addPodcast(Podcast podcast) {
-        if (podcasts.stream().anyMatch(existingPodcast -> existingPodcast.getName().equals(podcast.getName()))) {
+        if (podcasts.stream().anyMatch(existingPodcast -> existingPodcast
+                .getName().equals(podcast.getName()))) {
             return " has another podcast with the same name.";
         } else {
             podcasts.add(podcast);
@@ -33,8 +34,24 @@ public class Host extends User {
         }
     }
 
+    public String removePodcast(String podcastName) {
+        if (podcasts.stream().noneMatch(existingPodcast -> existingPodcast
+                .getName().equals(podcastName))) {
+            return getUsername() + " doesn't have a podcast with the given name.";
+        } else {
+            if (lastplayed.getName().equals(podcastName)) {
+                return getUsername() + " can't delete this podcast.";
+            } else {
+                podcasts.removeIf(existingPodcast -> existingPodcast
+                        .getName().equals(podcastName));
+                return getUsername() + " deleted the podcast successfully.";
+            }
+        }
+    }
+
     public String addAnnouncement(Announcement announcement) {
-        if (announcements.stream().anyMatch(existingAnnouncement -> existingAnnouncement.getName().equals(announcement.getName()))) {
+        if (announcements.stream().anyMatch(existingAnnouncement -> existingAnnouncement
+                .getName().equals(announcement.getName()))) {
             return " has another announcement with the same name.";
         } else {
             announcements.add(announcement);
@@ -43,10 +60,12 @@ public class Host extends User {
     }
 
     public String removeAnnouncement(String announcementName) {
-        if (announcements.stream().noneMatch(existingAnnouncement -> existingAnnouncement.getName().equals(announcementName))) {
+        if (announcements.stream().noneMatch(existingAnnouncement -> existingAnnouncement
+                .getName().equals(announcementName))) {
             return getUsername() + " has no announcement with the given name.";
         } else {
-            announcements.removeIf(existingAnnouncement -> existingAnnouncement.getName().equals(announcementName));
+            announcements.removeIf(existingAnnouncement -> existingAnnouncement
+                    .getName().equals(announcementName));
             return getUsername() + " has successfully deleted the announcement.";
         }
     }

@@ -50,8 +50,8 @@ public final class Player {
         if (source != null && source.getAudioFile() != null) {
             PodcastBookmark currentBookmark =
                     new PodcastBookmark(source.getAudioCollection().getName(),
-                                        source.getIndex(),
-                                        source.getDuration());
+                            source.getIndex(),
+                            source.getDuration());
             bookmarks.removeIf(bookmark -> bookmark.getName().equals(currentBookmark.getName()));
             bookmarks.add(currentBookmark);
         }
@@ -74,7 +74,7 @@ public final class Player {
             return new PlayerSource(Enums.PlayerSourceType.PLAYLIST, (AudioCollection) entry);
         } else if ("podcast".equals(type)) {
             return createPodcastSource((AudioCollection) entry, bookmarks);
-        } else if("album".equals(type)) {
+        } else if ("album".equals(type)) {
             return new PlayerSource(Enums.PlayerSourceType.ALBUM, (AudioCollection) entry);
         }
 
@@ -94,8 +94,8 @@ public final class Player {
     /**
      * Sets source.
      *
-     * @param entry the entry
-     * @param sourceType  the sourceType
+     * @param entry      the entry
+     * @param sourceType the sourceType
      */
     public void setSource(final LibraryEntry entry, final String sourceType) {
         if ("podcast".equals(this.type)) {

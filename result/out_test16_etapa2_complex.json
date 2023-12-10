@@ -124,8 +124,14 @@
   "timestamp" : 124,
   "message" : "The username glester is already taken."
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 125,
   "message" : "The username john99 is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 126,
   "message" : "The username john99 is not an artist."
 }, {
   "command" : "addAlbum",
@@ -143,6 +149,9 @@
   "timestamp" : 129,
   "message" : "amanda16 has the same song at least twice in this album."
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 130,
   "message" : "The username barmstrong is not an artist."
 }, {
   "command" : "addAlbum",
@@ -170,22 +179,49 @@
   "timestamp" : 135,
   "message" : "mccarthyluis has the same song at least twice in this album."
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 136,
   "message" : "The username barmstrong is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 137,
   "message" : "The username john99 is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "charlesgarcia",
+  "timestamp" : 138,
   "message" : "The username charlesgarcia is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 139,
   "message" : "The username john99 is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 140,
   "message" : "The username barmstrong is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "fwebb",
+  "timestamp" : 141,
   "message" : "The username fwebb is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 142,
   "message" : "The username barmstrong is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 143,
   "message" : "The username barmstrong is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 144,
   "message" : "The username john99 is not an artist."
 }, {
   "command" : "addAlbum",
@@ -198,8 +234,14 @@
   "timestamp" : 146,
   "message" : "amanda16 has added new album successfully."
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 147,
   "message" : "The username barmstrong is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 148,
   "message" : "The username john99 is not an artist."
 }, {
   "command" : "addAlbum",
@@ -232,6 +274,9 @@
   "timestamp" : 154,
   "message" : "glester has added new album successfully."
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 155,
   "message" : "The username barmstrong is not an artist."
 }, {
   "command" : "addAlbum",
@@ -254,8 +299,14 @@
   "timestamp" : 159,
   "message" : "anthony22 has the same song at least twice in this album."
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 160,
   "message" : "The username barmstrong is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 161,
   "message" : "The username matthewporter is not an artist."
 }, {
   "command" : "addAlbum",
@@ -268,6 +319,9 @@
   "timestamp" : 163,
   "message" : "jsimpson has added new album successfully."
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 164,
   "message" : "The username matthewporter is not an artist."
 }, {
   "command" : "addAlbum",
@@ -285,6 +339,9 @@
   "timestamp" : 167,
   "message" : "mccarthyluis has the same song at least twice in this album."
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 168,
   "message" : "The username matthewporter is not an artist."
 }, {
   "command" : "addAlbum",
@@ -292,6 +349,9 @@
   "timestamp" : 169,
   "message" : "jsimpson has the same song at least twice in this album."
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 170,
   "message" : "The username matthewporter is not an artist."
 }, {
   "command" : "addAlbum",
@@ -304,8 +364,14 @@
   "timestamp" : 172,
   "message" : "jacobdean has added new album successfully."
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 173,
   "message" : "The username barmstrong is not an artist."
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 174,
   "message" : "The username matthewporter is not an artist."
 }, {
   "command" : "showAlbums",
@@ -17902,6 +17968,9 @@
   "timestamp" : 11770,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "fwebb",
+  "timestamp" : 11770,
   "message" : "The username fwebb is not an artist."
 }, {
   "user" : "alice22",
@@ -17971,6 +18040,9 @@
   "timestamp" : 11790,
   "message" : "Liked songs:\n\t[Whatever You Need, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 11790,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "carol19",
@@ -18004,6 +18076,9 @@
   "timestamp" : 11800,
   "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 11800,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "david27",
@@ -18073,6 +18148,9 @@
   "timestamp" : 11820,
   "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "fwebb",
+  "timestamp" : 11820,
   "message" : "The username fwebb is not an artist."
 }, {
   "user" : "frank21",
@@ -18106,6 +18184,9 @@
   "timestamp" : 11830,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 11830,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "grace25",
@@ -18211,6 +18292,9 @@
   "timestamp" : 11860,
   "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "fwebb",
+  "timestamp" : 11860,
   "message" : "The username fwebb is not an artist."
 }, {
   "user" : "jack29",
@@ -18280,6 +18364,9 @@
   "timestamp" : 11880,
   "message" : "Liked songs:\n\t[Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 11880,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "bob35",
@@ -18313,6 +18400,9 @@
   "timestamp" : 11890,
   "message" : "Liked songs:\n\t[Whatever You Need, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "charlesgarcia",
+  "timestamp" : 11890,
   "message" : "The username charlesgarcia is not an artist."
 }, {
   "user" : "carol19",
@@ -18346,6 +18436,9 @@
   "timestamp" : 11900,
   "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 11900,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "david27",
@@ -18379,6 +18472,9 @@
   "timestamp" : 11910,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 11910,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "emily30",
@@ -18412,6 +18508,9 @@
   "timestamp" : 11920,
   "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 11920,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "frank21",
@@ -18553,6 +18652,9 @@
   "timestamp" : 11960,
   "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "charlesgarcia",
+  "timestamp" : 11960,
   "message" : "The username charlesgarcia is not an artist."
 }, {
   "user" : "jack29",
@@ -18586,6 +18688,9 @@
   "timestamp" : 11970,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 11970,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "alice22",
@@ -18655,6 +18760,9 @@
   "timestamp" : 11990,
   "message" : "Liked songs:\n\t[Whatever You Need, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 11990,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "carol19",
@@ -18796,6 +18904,9 @@
   "timestamp" : 12030,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12030,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "grace25",
@@ -18865,6 +18976,9 @@
   "timestamp" : 12050,
   "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12050,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "irene33",
@@ -18934,6 +19048,9 @@
   "timestamp" : 12070,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12070,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "alice22",
@@ -19039,6 +19156,9 @@
   "timestamp" : 12100,
   "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12100,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "david27",
@@ -19108,6 +19228,9 @@
   "timestamp" : 12120,
   "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "fwebb",
+  "timestamp" : 12120,
   "message" : "The username fwebb is not an artist."
 }, {
   "user" : "frank21",
@@ -19177,6 +19300,9 @@
   "timestamp" : 12140,
   "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12140,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "henry26",
@@ -19282,6 +19408,9 @@
   "timestamp" : 12170,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12170,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "alice22",
@@ -19315,6 +19444,9 @@
   "timestamp" : 12180,
   "message" : "Liked songs:\n\t[Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12180,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "bob35",
@@ -19384,6 +19516,9 @@
   "timestamp" : 12200,
   "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12200,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "david27",
@@ -19453,6 +19588,9 @@
   "timestamp" : 12220,
   "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12220,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "frank21",
@@ -19486,6 +19624,9 @@
   "timestamp" : 12230,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 12230,
   "message" : "The username barmstrong is not an artist."
 }, {
   "user" : "grace25",
@@ -19519,6 +19660,9 @@
   "timestamp" : 12240,
   "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12240,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "henry26",
@@ -19624,6 +19768,9 @@
   "timestamp" : 12270,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "charlesgarcia",
+  "timestamp" : 12270,
   "message" : "The username charlesgarcia is not an artist."
 }, {
   "user" : "alice22",
@@ -19657,6 +19804,9 @@
   "timestamp" : 12280,
   "message" : "Liked songs:\n\t[Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12280,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "bob35",
@@ -19726,6 +19876,9 @@
   "timestamp" : 12300,
   "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12300,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "david27",
@@ -19795,6 +19948,9 @@
   "timestamp" : 12320,
   "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "fwebb",
+  "timestamp" : 12320,
   "message" : "The username fwebb is not an artist."
 }, {
   "user" : "frank21",
@@ -19828,6 +19984,9 @@
   "timestamp" : 12330,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12330,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "grace25",
@@ -19897,6 +20056,9 @@
   "timestamp" : 12350,
   "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12350,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "irene33",
@@ -19930,6 +20092,9 @@
   "timestamp" : 12360,
   "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12360,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "jack29",
@@ -20035,6 +20200,9 @@
   "timestamp" : 12390,
   "message" : "Liked songs:\n\t[Whatever You Need, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 12390,
   "message" : "The username barmstrong is not an artist."
 }, {
   "user" : "carol19",
@@ -20068,6 +20236,9 @@
   "timestamp" : 12400,
   "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12400,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "david27",
@@ -20137,6 +20308,9 @@
   "timestamp" : 12420,
   "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12420,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "frank21",
@@ -20170,6 +20344,9 @@
   "timestamp" : 12430,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 12430,
   "message" : "The username barmstrong is not an artist."
 }, {
   "user" : "grace25",
@@ -20239,6 +20416,9 @@
   "timestamp" : 12450,
   "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 12450,
   "message" : "The username barmstrong is not an artist."
 }, {
   "user" : "irene33",
@@ -20272,6 +20452,9 @@
   "timestamp" : 12460,
   "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12460,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "jack29",
@@ -20341,6 +20524,9 @@
   "timestamp" : 12480,
   "message" : "Liked songs:\n\t[Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12480,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "bob35",
@@ -20482,6 +20668,9 @@
   "timestamp" : 12520,
   "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "charlesgarcia",
+  "timestamp" : 12520,
   "message" : "The username charlesgarcia is not an artist."
 }, {
   "user" : "frank21",
@@ -20515,6 +20704,9 @@
   "timestamp" : 12530,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12530,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "grace25",
@@ -20548,6 +20740,9 @@
   "timestamp" : 12540,
   "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12540,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "henry26",
@@ -20617,6 +20812,9 @@
   "timestamp" : 12560,
   "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12560,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "jack29",
@@ -20794,6 +20992,9 @@
   "timestamp" : 12610,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 12610,
   "message" : "The username barmstrong is not an artist."
 }, {
   "user" : "emily30",
@@ -20863,6 +21064,9 @@
   "timestamp" : 12630,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 12630,
   "message" : "The username barmstrong is not an artist."
 }, {
   "user" : "grace25",
@@ -20896,6 +21100,9 @@
   "timestamp" : 12640,
   "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "fwebb",
+  "timestamp" : 12640,
   "message" : "The username fwebb is not an artist."
 }, {
   "user" : "henry26",
@@ -20929,6 +21136,9 @@
   "timestamp" : 12650,
   "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12650,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "irene33",
@@ -20962,6 +21172,9 @@
   "timestamp" : 12660,
   "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12660,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "jack29",
@@ -21103,6 +21316,9 @@
   "timestamp" : 12700,
   "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12700,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "david27",
@@ -21136,6 +21352,9 @@
   "timestamp" : 12710,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12710,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "emily30",
@@ -21169,6 +21388,9 @@
   "timestamp" : 12720,
   "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "charlesgarcia",
+  "timestamp" : 12720,
   "message" : "The username charlesgarcia is not an artist."
 }, {
   "user" : "frank21",
@@ -21238,6 +21460,9 @@
   "timestamp" : 12740,
   "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "charlesgarcia",
+  "timestamp" : 12740,
   "message" : "The username charlesgarcia is not an artist."
 }, {
   "user" : "henry26",
@@ -21271,6 +21496,9 @@
   "timestamp" : 12750,
   "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12750,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "irene33",
@@ -21304,6 +21532,9 @@
   "timestamp" : 12760,
   "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "fwebb",
+  "timestamp" : 12760,
   "message" : "The username fwebb is not an artist."
 }, {
   "user" : "jack29",
@@ -21409,6 +21640,9 @@
   "timestamp" : 12790,
   "message" : "Liked songs:\n\t[Whatever You Need, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12790,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "carol19",
@@ -21514,6 +21748,9 @@
   "timestamp" : 12820,
   "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12820,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "frank21",
@@ -21655,6 +21892,9 @@
   "timestamp" : 12860,
   "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12860,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "jack29",
@@ -21724,6 +21964,9 @@
   "timestamp" : 12880,
   "message" : "Liked songs:\n\t[Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12880,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "bob35",
@@ -21793,6 +22036,9 @@
   "timestamp" : 12900,
   "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12900,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "david27",
@@ -21862,6 +22108,9 @@
   "timestamp" : 12920,
   "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12920,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "frank21",
@@ -21895,6 +22144,9 @@
   "timestamp" : 12930,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12930,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "grace25",
@@ -21928,6 +22180,9 @@
   "timestamp" : 12940,
   "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 12940,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "henry26",
@@ -21961,6 +22216,9 @@
   "timestamp" : 12950,
   "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12950,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "irene33",
@@ -22030,6 +22288,9 @@
   "timestamp" : 12970,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "fwebb",
+  "timestamp" : 12970,
   "message" : "The username fwebb is not an artist."
 }, {
   "user" : "alice22",
@@ -22063,6 +22324,9 @@
   "timestamp" : 12980,
   "message" : "Liked songs:\n\t[Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 12980,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "bob35",
@@ -22168,6 +22432,9 @@
   "timestamp" : 13010,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "charlesgarcia",
+  "timestamp" : 13010,
   "message" : "The username charlesgarcia is not an artist."
 }, {
   "user" : "emily30",
@@ -22237,6 +22504,9 @@
   "timestamp" : 13030,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "fwebb",
+  "timestamp" : 13030,
   "message" : "The username fwebb is not an artist."
 }, {
   "user" : "grace25",
@@ -22414,6 +22684,9 @@
   "timestamp" : 13080,
   "message" : "Liked songs:\n\t[Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 13080,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "bob35",
@@ -22483,6 +22756,9 @@
   "timestamp" : 13100,
   "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 13100,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "david27",
@@ -22516,6 +22792,9 @@
   "timestamp" : 13110,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 13110,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "emily30",
@@ -22549,6 +22828,9 @@
   "timestamp" : 13120,
   "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 13120,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "frank21",
@@ -22582,6 +22864,9 @@
   "timestamp" : 13130,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 13130,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "grace25",
@@ -22615,6 +22900,9 @@
   "timestamp" : 13140,
   "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 13140,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "henry26",
@@ -22720,6 +23008,9 @@
   "timestamp" : 13170,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 13170,
   "message" : "The username matthewporter is not an artist."
 }, {
   "user" : "alice22",
@@ -22789,6 +23080,9 @@
   "timestamp" : 13190,
   "message" : "Liked songs:\n\t[Whatever You Need, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "john99",
+  "timestamp" : 13190,
   "message" : "The username john99 is not an artist."
 }, {
   "user" : "carol19",
@@ -22858,6 +23152,9 @@
   "timestamp" : 13210,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 13210,
   "message" : "The username barmstrong is not an artist."
 }, {
   "user" : "emily30",
@@ -22927,6 +23224,9 @@
   "timestamp" : 13230,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 13230,
   "message" : "The username barmstrong is not an artist."
 }, {
   "user" : "grace25",
@@ -22996,6 +23296,9 @@
   "timestamp" : 13250,
   "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 13250,
   "message" : "The username barmstrong is not an artist."
 }, {
   "user" : "irene33",
@@ -23029,6 +23332,9 @@
   "timestamp" : 13260,
   "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "addAlbum",
+  "user" : "fwebb",
+  "timestamp" : 13260,
   "message" : "The username fwebb is not an artist."
 }, {
   "user" : "jack29",
@@ -25657,4 +25963,8 @@
   "command" : "getTop5Songs",
   "timestamp" : 14850,
   "result" : [ "Don't", "Whatever You Need", "Start Me Up", "The Man", "Delicate" ]
+}, {
+  "command" : "getTop5Albums",
+  "timestamp" : 14850,
+  "result" : [ "Teen Technology", "Electric View", "Teen Hood", "Alone View", "Teen Funeral " ]
 } ]

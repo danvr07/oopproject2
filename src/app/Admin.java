@@ -32,6 +32,8 @@ public final class Admin {
     private static List<User> users = new ArrayList<>();
     private static List<Song> songs = new ArrayList<>();
     private static List<Podcast> podcasts = new ArrayList<>();
+
+    // private static List<Album> albums = new ArrayList<>();
     private static int timestamp = 0;
     private static final int LIMIT = 5;
 
@@ -50,6 +52,10 @@ public final class Admin {
             users.add(new User(userInput.getUsername(), userInput.getAge(), userInput.getCity()));
         }
     }
+
+//    public static void addAlbum(Album album) {
+//        albums.add(album);
+//    }
 
     /**
      * Sets songs.
@@ -167,6 +173,33 @@ public final class Admin {
         return topSongs;
     }
 
+    public static List<String> getTop5Albums() {
+        List<Album> sortedAlbums = new ArrayList<>(getAlbums());
+        for (Album album : sortedAlbums) {
+            for (Song iter : songs) {
+                for (SongInput song : album.getAllSongs()) {
+                    if (iter.getName().equals(song.getName())) {
+                        album.setLikes(album.getLikes() + iter.getLikes());
+                    }
+                }
+            }
+
+        }
+        sortedAlbums.sort(Comparator.comparingInt(Album::getLikes).reversed());
+        List<String> topAlbums = new ArrayList<>();
+        int count = 0;
+        for (Album album : sortedAlbums) {
+            if (count >= LIMIT) {
+                break;
+            }
+            topAlbums.add(album.getName());
+            count++;
+        }
+        return topAlbums;
+
+        //  return null;
+    }
+
     /**
      * Gets top 5 playlists.
      *
@@ -199,7 +232,8 @@ public final class Admin {
         return onlineUsers;
     }
 
-    public static String addUser(String username, int age, String city, boolean online, String type) {
+    public static String addUser(String username,
+                                 int age, String city, boolean online, String type) {
         if (users.stream().anyMatch(existingUser -> existingUser.getUsername().equals(username))) {
             return "The username " + username + " is already taken.";
         } else {
@@ -234,18 +268,21 @@ public final class Admin {
         List<String> allUsers = new ArrayList<>();
 
         for (User user : users) {
-            if (user.getType().equals("regular"))
+            if (user.getType().equals("regular")) {
                 allUsers.add(user.getUsername());
+            }
         }
 
         for (User user : users) {
-            if (user.getType().equals("artist"))
+            if (user.getType().equals("artist")) {
                 allUsers.add(user.getUsername());
+            }
         }
 
         for (User user : users) {
-            if (user.getType().equals("host"))
+            if (user.getType().equals("host")) {
                 allUsers.add(user.getUsername());
+            }
         }
 
         return allUsers;
@@ -283,6 +320,7 @@ public final class Admin {
                     }
                 } else {
                     for (Playlist playlist : user.getPlaylists()) {
+                        // System.out.println(playlist.getFollowers());
                         updateFollowedPlaylists(playlist.getName());
                     }
                     users.remove(user);
@@ -294,21 +332,6 @@ public final class Admin {
         }
         return "The user " + username + " does not exist.";
     }
-
-//    public static String showPodcasts( String username) {
-//        for (User user : users) {
-//            if (user.getUsername().equals(username)) {
-//                Host host = (Host) user;
-//                List<String> result = new ArrayList<>();
-//                for (Podcast podcast : host.getPodcasts()) {
-//
-//                }
-//                return result.toString();
-//
-//            }
-//        }
-//        return "The user " + username + " does not exist.";
-//    }
 
     public static void updateSongs(Artist artist, String username) {
         getAlbums().removeIf(album -> album.getOwner().equals(username));
