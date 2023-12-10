@@ -41,7 +41,7 @@
 }, {
   "command" : "getAllUsers",
   "timestamp" : 85,
-  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "soundseeker21", "melodicwanderer", "sonicpainter", "echoexplorer", "rhythmweaver" ]
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "soundseeker21", "melodicwanderer", "sonicpainter", "echoexplorer", "rhythmweaver", "audiosage", "soundcurator", "musicmaven" ]
 }, {
   "command" : "addPodcast",
   "user" : "audiosage",
@@ -213,12 +213,17 @@
   "command" : "deleteUser",
   "user" : "audiosage",
   "timestamp" : 930,
-  "message" : "The user audiosage does not exist."
+  "message" : "audiosage was successfully deleted."
+}, {
+  "command" : "changePage",
+  "user" : "soundseeker21",
+  "timestamp" : 955,
+  "message" : "soundseeker21 accessed Home successfully."
 }, {
   "command" : "deleteUser",
   "user" : "melodicwanderer",
   "timestamp" : 960,
-  "message" : "The user melodicwanderer does not exist."
+  "message" : "melodicwanderer was successfully deleted."
 }, {
   "command" : "repeat",
   "user" : "carol19",
@@ -248,7 +253,7 @@
   "command" : "deleteUser",
   "user" : "musicmaven",
   "timestamp" : 6900,
-  "message" : "The user musicmaven does not exist."
+  "message" : "musicmaven was successfully deleted."
 }, {
   "command" : "repeat",
   "user" : "carol19",
@@ -275,6 +280,11 @@
   "timestamp" : 7860,
   "message" : "The user sonicpainter does not exist."
 }, {
+  "command" : "changePage",
+  "user" : "david27",
+  "timestamp" : 7885,
+  "message" : "david27 accessed Home successfully."
+}, {
   "command" : "deleteUser",
   "user" : "sonicpainter",
   "timestamp" : 7890,
@@ -283,5 +293,5 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 7900,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[Playlist bengos]"
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 } ]

@@ -554,6 +554,33 @@ public final class CommandRunner {
         return objectNode;
     }
 
+    public static ObjectNode changePage(CommandInput commandInput) {
+        ObjectNode objectNode = objectMapper.createObjectNode();
+        User user = Admin.getUser(commandInput.getUsername());
+        if (user != null) {
+            if (user.isOnline()) {
+
+                objectNode.put("command", commandInput.getCommand());
+                objectNode.put("user", commandInput.getUsername());
+                objectNode.put("timestamp", commandInput.getTimestamp());
+                objectNode.put("message",  user.changePage(commandInput.getNextPage()));
+                return objectNode;
+            } else {
+                objectNode.put("command", commandInput.getCommand());
+                objectNode.put("user", commandInput.getUsername());
+                objectNode.put("timestamp", commandInput.getTimestamp());
+                objectNode.put("message", commandInput.getUsername() + " is offline.");
+                return objectNode;
+            }
+        } else {
+            objectNode.put("command", commandInput.getCommand());
+            objectNode.put("user", commandInput.getUsername());
+            objectNode.put("timestamp", commandInput.getTimestamp());
+            objectNode.put("message", "The username " + commandInput.getUsername() + " doesn't exist.");
+            return objectNode;
+        }
+    }
+
 
     public static ObjectNode printCurrentPage(CommandInput commandInput) {
 
@@ -677,6 +704,35 @@ public final class CommandRunner {
         objectNode.set("result", resultArray);
 
         return objectNode;
+    }
+
+    public static ObjectNode removeAlbum(CommandInput commandInput) {
+        ObjectNode objectNode = objectMapper.createObjectNode();
+        User user = Admin.getUser(commandInput.getUsername());
+        if (user != null) {
+            if (user.getType().equals("artist")) {
+                Artist artist = (Artist) user;
+               // System.out.println(commandInput.getName());
+                String message = artist.removeAlbum(commandInput.getName());
+                objectNode.put("command", commandInput.getCommand());
+                objectNode.put("user", commandInput.getUsername());
+                objectNode.put("timestamp", commandInput.getTimestamp());
+                objectNode.put("message", message);
+                return objectNode;
+            } else {
+                objectNode.put("command", commandInput.getCommand());
+                objectNode.put("user", commandInput.getUsername());
+                objectNode.put("timestamp", commandInput.getTimestamp());
+                objectNode.put("message", commandInput.getUsername() + " is not an artist.");
+                return objectNode;
+            }
+        } else {
+            objectNode.put("command", commandInput.getCommand());
+            objectNode.put("user", commandInput.getUsername());
+            objectNode.put("timestamp", commandInput.getTimestamp());
+            objectNode.put("message", "The username " + commandInput.getUsername() + " doesn't exist.");
+            return objectNode;
+        }
     }
 
     public static ObjectNode addEvent(CommandInput commandInput) {

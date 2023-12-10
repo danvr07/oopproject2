@@ -1,6 +1,7 @@
 package app.user;
 
 
+import app.Admin;
 import app.audio.Collections.Album;
 import app.info.Event;
 import app.info.Merch;
@@ -9,7 +10,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class Artist extends User  {
+public class Artist extends User {
 
     ArrayList<Album> albums;
     ArrayList<Event> events;
@@ -49,7 +50,7 @@ public class Artist extends User  {
         try {
             // Verificăm validitatea datei
             Date eventDate = validateDate(dateString);
-           // System.out.println(eventName);
+            // System.out.println(eventName);
 
             // Creăm un nou eveniment și îl adăugăm la lista de evenimente a artistului
             Event event = new Event(eventName, eventDescription, eventDate);
@@ -122,4 +123,28 @@ public class Artist extends User  {
         return names;
     }
 
+    public String removeAlbum(String name) {
+
+        List<String> loadetSongs = new ArrayList<>();
+
+        for (User user : Admin.getUsers()) {
+            //System.out.println(user.getUsername());
+            if (user.getPlayer().getSource() != null && !user.getPlayer().getPaused()) {
+              //  System.out.println(user.getPlayer().getSource().getAudioFile().getName());
+                loadetSongs.add(user.getPlayer().getSource().getAudioFile().getName());
+            }
+        }
+        for(Album album : this.getAlbums()) {
+            if(album.getName().equals(name) ) {
+                if(album.getAllSongs().stream().anyMatch(song -> loadetSongs.contains(song.getName()))) {
+                    return getUsername() + " can't delete this album.";
+                } else {
+                    albums.remove(album);
+                    return getUsername() + " deleted the album successfully.";
+                }
+            }
+        }
+        //   this.getAlbums().removeIf(album -> album.getName().equals(name));
+        return getUsername() + " doesn't have an album with the given name.";
+    }
 }

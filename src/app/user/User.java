@@ -7,6 +7,7 @@ import app.audio.Files.AudioFile;
 import app.audio.Files.Song;
 import app.audio.LibraryEntry;
 import app.pageSystem.HomePage;
+import app.pageSystem.LikedContentPage;
 import app.pageSystem.Page;
 import app.player.Player;
 import app.player.PlayerStats;
@@ -45,15 +46,15 @@ public class User extends LibraryEntry {
 
     private Page currentPage;
 
-     public static LibraryEntry lastloaded;
+    public static LibraryEntry lastloaded;
 
-     public static User userloaded;
+    public static User userloaded;
 
     public void setCurrentPage(Page currentPage) {
         this.currentPage = currentPage;
     }
 
-   public Player getPlayer() {
+    public Player getPlayer() {
         return player;
     }
 
@@ -137,24 +138,25 @@ public class User extends LibraryEntry {
     public String select(final int itemNumber) {
         if (!lastSearched) {
             return "Please conduct a search before making a selection.";
-        };
+        }
+        ;
 
         lastSearched = false;
 
         LibraryEntry selected = searchBar.select(itemNumber);
-      //  System.out.println(selected.getName());
-       // System.out.println(selected.getName());
+        //  System.out.println(selected.getName());
+        // System.out.println(selected.getName());
 
-        if(selected!= null && selected.isArtist()) {
+        if (selected != null && selected.isArtist()) {
             this.currentPage = ((Artist) selected).getCurrentPage();
-        } else if(selected!= null && selected.isHost()) {
+        } else if (selected != null && selected.isHost()) {
             System.out.println("host");
             this.currentPage = ((Host) selected).getCurrentPage();
         }
 
         if (selected == null)
             return "The selected ID is too high.";
-        if(selected.isArtist() || selected.isHost()) {
+        if (selected.isArtist() || selected.isHost()) {
             return "Successfully selected %s's page.".formatted(selected.getName());
         } else {
             return "Successfully selected %s.".formatted(selected.getName());
@@ -177,7 +179,8 @@ public class User extends LibraryEntry {
         }
 
         player.setSource(searchBar.getLastSelected(), searchBar.getLastSearchType());
-        searchBar.clearSelection();;
+        searchBar.clearSelection();
+        ;
 
         player.pause();
 
@@ -239,8 +242,33 @@ public class User extends LibraryEntry {
                 repeatStatus = "";
             }
         }
+        lastloaded = player.getCurrentAudioFile();
 
         return "Repeat mode changed to %s.".formatted(repeatStatus);
+    }
+
+    public String changePage(String page) {
+        if (page.equals("Home")) {
+            this.currentPage = new HomePage(this);
+            return username + " accessed " + page + " successfully.";
+        } else if (page.equals("LikedContent")) {
+            if (this.type.equals("regular")) {
+                this.currentPage = new LikedContentPage(this);
+                return username + " accessed " + page + " successfully.";
+            } else {
+                return username + " is trying to access a non-existent page.";
+            }
+        } else {
+//        } else if (page.equals("host")) {
+//            if (this instanceof Host) {
+//                this.currentPage = ((Host) this).getCurrentPage();
+//                return "Successfully changed page to host.";
+//            } else {
+//                return "You are not a host.";
+//            }
+//        } else {
+            return "Invalid page.";
+        }
     }
 
     /**
@@ -364,7 +392,7 @@ public class User extends LibraryEntry {
 
         player.prev();
 
-       lastloaded = player.getCurrentAudioFile();
+        lastloaded = player.getCurrentAudioFile();
 
         return "Returned to previous track successfully. The current track is %s."
                 .formatted(player.getCurrentAudioFile().getName());
@@ -564,6 +592,16 @@ public class User extends LibraryEntry {
         while (iterator.hasNext()) {
             Song song = iterator.next();
             if (song.getName().equals(songName)) {
+                iterator.remove();
+            }
+        }
+    }
+
+    public void updateFollowedPlaylists(String playlistName) {
+        Iterator<Playlist> iterator = followedPlaylists.iterator();
+        while (iterator.hasNext()) {
+            Playlist playlist = iterator.next();
+            if (playlist.getName().equals(playlistName)) {
                 iterator.remove();
             }
         }

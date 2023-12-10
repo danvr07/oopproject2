@@ -226,6 +226,10 @@ public final class Admin {
         }
     }
 
+    public static List<User> getUsers() {
+        return users;
+    }
+
     public static List<String> getAllUsers() {
         List<String> allUsers = new ArrayList<>();
 
@@ -239,6 +243,11 @@ public final class Admin {
                 allUsers.add(user.getUsername());
         }
 
+        for (User user : users) {
+            if (user.getType().equals("host"))
+                allUsers.add(user.getUsername());
+        }
+
         return allUsers;
     }
 
@@ -246,12 +255,16 @@ public final class Admin {
         for (User user : users) {
             if (user.getUsername().equals(username)) {
 
-
+                // System.out.println(user.getType());
                 if (user.getType().equals("artist")) {
                     Artist artist = (Artist) user;
                     String arstist = ((Song) lastloaded).getArtist();
 
-                    if (arstist.equals(username) && userloaded.getPlayer().getPaused()) {
+                    // userloaded.getPlayer().getPaused()
+
+                    // arstist.equals(username) &&
+
+                    if (userloaded.getPlayer().getPaused()) {
 //                        getAlbums().removeIf(album -> album.getOwner().equals(username));
 //                        songs.removeIf(song -> song.getArtist().equals(username));
 
@@ -268,6 +281,12 @@ public final class Admin {
                     } else {
                         return username + " can't be deleted.";
                     }
+                } else {
+                    for (Playlist playlist : user.getPlaylists()) {
+                        updateFollowedPlaylists(playlist.getName());
+                    }
+                    users.remove(user);
+                    return username + " was successfully deleted.";
                 }
 
 
@@ -301,6 +320,12 @@ public final class Admin {
                     user.updateLikedSongs(song.getName());
                 }
             }
+        }
+    }
+
+    public static void updateFollowedPlaylists(String playlistName) {
+        for (User user : users) {
+            user.updateFollowedPlaylists(playlistName);
         }
     }
 

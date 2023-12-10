@@ -265,7 +265,7 @@
   "command" : "deleteUser",
   "user" : "david27",
   "timestamp" : 3257,
-  "message" : "The user david27 does not exist."
+  "message" : "david27 was successfully deleted."
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -339,7 +339,7 @@
   "command" : "deleteUser",
   "user" : "soundseeker",
   "timestamp" : 4010,
-  "message" : "The user soundseeker does not exist."
+  "message" : "soundseeker was successfully deleted."
 }, {
   "command" : "status",
   "user" : "carol19",
