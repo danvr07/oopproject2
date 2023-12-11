@@ -22,8 +22,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static app.user.User.lastloaded;
-import static app.user.User.userloaded;
+import static app.user.User.*;
 
 /**
  * The type Admin.
@@ -318,11 +317,23 @@ public final class Admin {
                     } else {
                         return username + " can't be deleted.";
                     }
-                } else {
-                    for (Playlist playlist : user.getPlaylists()) {
-                        // System.out.println(playlist.getFollowers());
-                        updateFollowedPlaylists(playlist.getName());
+                } else if (user.getType().equals("host")) {
+                    Host host = (Host) user;
+//
+                    String removedPodcast = host.removePodcast(lastplayed.getName());
+                    if (userloaded.getPlayer().getPaused() && removedPodcast.equals(username + " deleted the podcast successfully.")){
+                        users.remove(user);
+                        return username + " was successfully deleted.";
+                    } else {
+                        return username + " can't be deleted.";
                     }
+                } else {
+//                    for (Playlist playlist : user.getPlaylists()) {
+//                        // System.out.println(playlist.getFollowers());
+//                        updateFollowedPlaylists(playlist.getName());
+//                    }
+                    updateFollowedPlaylists(user);
+                    decrementFollowers(user);
                     users.remove(user);
                     return username + " was successfully deleted.";
                 }
@@ -331,6 +342,19 @@ public final class Admin {
             }
         }
         return "The user " + username + " does not exist.";
+    }
+
+
+    public static void decrementFollowers(User deletedUser) {
+        for (User user : users) {
+            for (Playlist playlist : deletedUser.getFollowedPlaylists()) {
+                for (Playlist playlist1 : user.getPlaylists()) {
+                    if (playlist.getName().equals(playlist1.getName())) {
+                        playlist1.setFollowers(playlist1.getFollowers() - 1);
+                    }
+                }
+            }
+        }
     }
 
     public static void updateSongs(Artist artist, String username) {
@@ -346,9 +370,11 @@ public final class Admin {
         }
     }
 
-    public static void updateFollowedPlaylists(String playlistName) {
-        for (User user : users) {
-            user.updateFollowedPlaylists(playlistName);
+    public static void updateFollowedPlaylists(User deletedUser) {
+        for (Playlist playlist : deletedUser.getPlaylists()) {
+            for (User user : users) {
+                user.updateFollowedPlaylists(playlist.getName());
+            }
         }
     }
 

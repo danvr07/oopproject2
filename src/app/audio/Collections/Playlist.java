@@ -17,6 +17,10 @@ public final class Playlist extends AudioCollection {
     private Integer followers;
     private int timestamp;
 
+    public void setFollowers(Integer followers) {
+        this.followers = followers;
+    }
+
     /**
      * Instantiates a new Playlist.
      *

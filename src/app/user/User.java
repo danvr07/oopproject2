@@ -50,6 +50,7 @@ public class User extends LibraryEntry {
     public static LibraryEntry lastplayed;
 
     public static User userloaded;
+    public static LibraryEntry albumloaded;
 
     public void setCurrentPage(Page currentPage) {
         this.currentPage = currentPage;
@@ -177,7 +178,15 @@ public class User extends LibraryEntry {
                 && ((AudioCollection) searchBar.getLastSelected()).getNumberOfTracks() == 0) {
             return "You can't load an empty audio collection!";
         }
+        if(searchBar.getLastSearchType().equals("album")) {
+            albumloaded = searchBar.getLastSelected();
+        }
+
+       // System.out.println( "tip" + searchBar.getLastSearchType());
+
         lastplayed = searchBar.getLastSelected();
+//        System.out.println("dd"  + lastplayed.getName());
+       // System.out.println(searchBar.getLastSelected().getName());
 
         player.setSource(searchBar.getLastSelected(), searchBar.getLastSearchType());
         searchBar.clearSelection();

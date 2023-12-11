@@ -479,8 +479,7 @@ public final class CommandRunner {
 
             } else {
 
-                objectNode.put("message", "The username "
-                        + commandInput.getUsername() + " is not an artist.");
+                objectNode.put("message", commandInput.getUsername() + " is not an artist.");
             }
         }
 
@@ -524,6 +523,30 @@ public final class CommandRunner {
         }
 
 
+    }
+
+    public static ObjectNode removeEvent(CommandInput commandInput) {
+        ObjectNode objectNode = objectMapper.createObjectNode();
+        User user = Admin.getUser(commandInput.getUsername());
+        objectNode.put("command", commandInput.getCommand());
+        objectNode.put("user", commandInput.getUsername());
+        objectNode.put("timestamp", commandInput.getTimestamp());
+
+        if (user != null) {
+            if (user.getType().equals("artist")) {
+                Artist artist = (Artist) user;
+                String message = artist.removeEvent(commandInput.getName());
+                objectNode.put("message", message);
+                return objectNode;
+            } else {
+                objectNode.put("message", commandInput.getUsername() + " is not an artist.");
+                return objectNode;
+            }
+        } else {
+            objectNode.put("message", "The username "
+                    + commandInput.getUsername() + " doesn't exist.");
+            return objectNode;
+        }
     }
 
 

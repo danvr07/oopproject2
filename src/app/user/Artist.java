@@ -22,7 +22,6 @@ public class Artist extends User {
     private static final int MAX_MONTH = 12;
     private static final int MIN_YEAR = 1900;
     private static final int MAX_YEAR = 2023;
-
     private static final int MONTH_FEB = 2;
 
     private static final int DAY_FEB = 28;
@@ -78,6 +77,16 @@ public class Artist extends User {
             // În cazul în care există o excepție, returnăm un mesaj de eroare
             return "Event for " + getUsername() + " does not have a valid date.";
         }
+    }
+
+    public String removeEvent(String eventName) {
+        for (Event event : events) {
+            if (event.getName().equals(eventName)) {
+                events.remove(event);
+                return getUsername() + " deleted the event successfully.";
+            }
+        }
+        return getUsername() + " doesn't have an event with the given name.";
     }
 
     public Date validateDate(String dateString) throws ParseException {
@@ -155,7 +164,7 @@ public class Artist extends User {
         for (Album album : this.getAlbums()) {
             if (album.getName().equals(name)) {
                 if (album.getAllSongs().stream().anyMatch(song -> loadetSongs
-                        .contains(song.getName()))) {
+                        .contains(song.getName())) || album.getName().equals(albumloaded.getName())) {
                     return getUsername() + " can't delete this album.";
                 } else {
                     albums.remove(album);

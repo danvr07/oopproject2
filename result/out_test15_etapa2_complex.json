@@ -132,7 +132,7 @@
   "command" : "addAlbum",
   "user" : "charlesgarcia",
   "timestamp" : 126,
-  "message" : "The username charlesgarcia is not an artist."
+  "message" : "charlesgarcia is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "cbutler",
@@ -152,12 +152,12 @@
   "command" : "addAlbum",
   "user" : "jenningsbeth",
   "timestamp" : 130,
-  "message" : "The username jenningsbeth is not an artist."
+  "message" : "jenningsbeth is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 131,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "leslie27",
@@ -167,7 +167,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 133,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "matthewfernandez",
@@ -177,17 +177,17 @@
   "command" : "addAlbum",
   "user" : "jenningsbeth",
   "timestamp" : 135,
-  "message" : "The username jenningsbeth is not an artist."
+  "message" : "jenningsbeth is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 136,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "nancymontgomery",
   "timestamp" : 137,
-  "message" : "The username nancymontgomery is not an artist."
+  "message" : "nancymontgomery is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "matthewfernandez",
@@ -212,7 +212,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 142,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "barmstrong",
@@ -237,7 +237,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 147,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "cbutler",
@@ -247,12 +247,12 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 149,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 150,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "barmstrong",
@@ -262,7 +262,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 152,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "matthewfernandez",
@@ -292,7 +292,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 158,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "cbutler",
@@ -307,7 +307,7 @@
   "command" : "addAlbum",
   "user" : "jenningsbeth",
   "timestamp" : 161,
-  "message" : "The username jenningsbeth is not an artist."
+  "message" : "jenningsbeth is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "leslie27",
@@ -322,7 +322,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 164,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "leslie27",
@@ -332,17 +332,17 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 166,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "jenningsbeth",
   "timestamp" : 167,
-  "message" : "The username jenningsbeth is not an artist."
+  "message" : "jenningsbeth is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 168,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "jacobdean",
@@ -357,7 +357,7 @@
   "command" : "addAlbum",
   "user" : "jenningsbeth",
   "timestamp" : 171,
-  "message" : "The username jenningsbeth is not an artist."
+  "message" : "jenningsbeth is not an artist."
 }, {
   "command" : "addAlbum",
   "user" : "cbutler",
@@ -4923,7 +4923,7 @@
   "command" : "shuffle",
   "user" : "alice22",
   "timestamp" : 5429,
-  "message" : "Shuffle function deactivated successfully."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "jacobdean",
@@ -4937,30 +4937,30 @@
     "name" : "Serendipity Serendipity",
     "remainedTime" : 239,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
   "command" : "next",
   "user" : "alice22",
   "timestamp" : 5435,
-  "message" : "Skipped to next track successfully. The current track is Melody Sunset."
+  "message" : "Please load a source before skipping to the next track."
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 5689,
   "stats" : {
-    "name" : "Rapture Odyssey",
-    "remainedTime" : 144,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 5690,
-  "message" : "Loaded source is not a song."
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -5022,7 +5022,7 @@
   "command" : "shuffle",
   "user" : "bob35",
   "timestamp" : 5740,
-  "message" : "Shuffle function deactivated successfully."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "leslie27",
@@ -5036,23 +5036,23 @@
     "name" : "Whisper Pulse",
     "remainedTime" : 254,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
   "command" : "next",
   "user" : "bob35",
   "timestamp" : 5746,
-  "message" : "Skipped to next track successfully. The current track is Radiance Euphoria."
+  "message" : "Skipped to next track successfully. The current track is Euphoria Luminescence."
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 6000,
   "stats" : {
-    "name" : "Odyssey Rapture",
-    "remainedTime" : 188,
+    "name" : "Dance Harmonize",
+    "remainedTime" : 173,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5126,7 +5126,7 @@
   "command" : "shuffle",
   "user" : "carol19",
   "timestamp" : 6051,
-  "message" : "Shuffle function deactivated successfully."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "cbutler",
@@ -5140,23 +5140,23 @@
     "name" : "Heart Bliss",
     "remainedTime" : 157,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
   "command" : "next",
   "user" : "carol19",
   "timestamp" : 6057,
-  "message" : "Skipped to next track successfully. The current track is Pinnacle Euphoria."
+  "message" : "Skipped to next track successfully. The current track is Essence Voyage."
 }, {
   "command" : "status",
   "user" : "carol19",
   "timestamp" : 6311,
   "stats" : {
-    "name" : "Whirlwind Solitude",
-    "remainedTime" : 194,
+    "name" : "Whirlwind Serenade",
+    "remainedTime" : 218,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5324,7 +5324,7 @@
   "command" : "shuffle",
   "user" : "emily30",
   "timestamp" : 6673,
-  "message" : "Shuffle function deactivated successfully."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "jacobdean",
@@ -5338,23 +5338,23 @@
     "name" : "Serendipity Serendipity",
     "remainedTime" : 239,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
   "command" : "next",
   "user" : "emily30",
   "timestamp" : 6679,
-  "message" : "Skipped to next track successfully. The current track is Melody Sunset."
+  "message" : "Skipped to next track successfully. The current track is Radiance Starlight."
 }, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 6933,
   "stats" : {
-    "name" : "Rapture Odyssey",
-    "remainedTime" : 144,
+    "name" : "Dance Pinnacle",
+    "remainedTime" : 171,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5423,7 +5423,7 @@
   "command" : "shuffle",
   "user" : "frank21",
   "timestamp" : 6984,
-  "message" : "Shuffle function deactivated successfully."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "amanda16",
@@ -5437,7 +5437,7 @@
     "name" : "Luminescence Crescendo",
     "remainedTime" : 224,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5450,10 +5450,10 @@
   "user" : "frank21",
   "timestamp" : 7244,
   "stats" : {
-    "name" : "Echo Pinnacle",
-    "remainedTime" : 256,
+    "name" : "Colors Rapture",
+    "remainedTime" : 271,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5522,7 +5522,7 @@
   "command" : "shuffle",
   "user" : "grace25",
   "timestamp" : 7295,
-  "message" : "Shuffle function deactivated successfully."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "barmstrong",
@@ -5536,7 +5536,7 @@
     "name" : "Love Love",
     "remainedTime" : 231,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5552,7 +5552,7 @@
     "name" : "Soul Love",
     "remainedTime" : 36,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5621,7 +5621,7 @@
   "command" : "shuffle",
   "user" : "henry26",
   "timestamp" : 7606,
-  "message" : "Shuffle function deactivated successfully."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "amanda16",
@@ -5635,23 +5635,23 @@
     "name" : "Luminescence Crescendo",
     "remainedTime" : 224,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
   "command" : "next",
   "user" : "henry26",
   "timestamp" : 7612,
-  "message" : "Skipped to next track successfully. The current track is Bliss Rhythm."
+  "message" : "Skipped to next track successfully. The current track is Zephyr Eclipse."
 }, {
   "command" : "status",
   "user" : "henry26",
   "timestamp" : 7866,
   "stats" : {
-    "name" : "Echo Pinnacle",
-    "remainedTime" : 256,
+    "name" : "Colors Rapture",
+    "remainedTime" : 273,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5720,7 +5720,7 @@
   "command" : "shuffle",
   "user" : "irene33",
   "timestamp" : 7917,
-  "message" : "Shuffle function deactivated successfully."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "jacobdean",
@@ -5734,7 +5734,7 @@
     "name" : "Celestial Soul",
     "remainedTime" : 213,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5750,7 +5750,7 @@
     "name" : "Utopia Harmony",
     "remainedTime" : 44,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5819,7 +5819,7 @@
   "command" : "shuffle",
   "user" : "jack29",
   "timestamp" : 8228,
-  "message" : "Shuffle function deactivated successfully."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "cbutler",
@@ -5833,7 +5833,7 @@
     "name" : "Heart Bliss",
     "remainedTime" : 157,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5846,10 +5846,10 @@
   "user" : "jack29",
   "timestamp" : 8488,
   "stats" : {
-    "name" : "Whirlwind Solitude",
-    "remainedTime" : 194,
+    "name" : "Adventure Cascade",
+    "remainedTime" : 203,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -18235,7 +18235,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 11819,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
@@ -18415,7 +18415,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 11869,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
@@ -18703,7 +18703,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 11949,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
@@ -19027,7 +19027,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12039,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -19207,7 +19207,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12089,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
@@ -19315,7 +19315,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12119,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
@@ -19387,7 +19387,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12139,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -19459,7 +19459,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12159,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -19819,7 +19819,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12259,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -19927,7 +19927,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12289,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
@@ -19963,7 +19963,7 @@
   "command" : "addAlbum",
   "user" : "jenningsbeth",
   "timestamp" : 12299,
-  "message" : "The username jenningsbeth is not an artist."
+  "message" : "jenningsbeth is not an artist."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -20107,7 +20107,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12339,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -20251,7 +20251,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12379,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
@@ -20575,7 +20575,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12469,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
@@ -20683,7 +20683,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12499,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -20719,7 +20719,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12509,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
@@ -20827,7 +20827,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12539,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -20863,7 +20863,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12549,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
@@ -21187,7 +21187,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12639,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -21511,7 +21511,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12729,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
@@ -22015,7 +22015,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12869,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
@@ -22375,7 +22375,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12969,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
@@ -22483,7 +22483,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 12999,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -22915,7 +22915,7 @@
   "command" : "addAlbum",
   "user" : "conniealvarez",
   "timestamp" : 13119,
-  "message" : "The username conniealvarez is not an artist."
+  "message" : "conniealvarez is not an artist."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
@@ -22951,7 +22951,7 @@
   "command" : "addAlbum",
   "user" : "jenningsbeth",
   "timestamp" : 13129,
-  "message" : "The username jenningsbeth is not an artist."
+  "message" : "jenningsbeth is not an artist."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
