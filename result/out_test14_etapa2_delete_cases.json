@@ -165,7 +165,7 @@
   "command" : "deleteUser",
   "user" : "sonicpainter",
   "timestamp" : 620,
-  "message" : "sonicpainter was successfully deleted."
+  "message" : "sonicpainter can't be deleted."
 }, {
   "command" : "search",
   "user" : "soundseeker21",
@@ -202,13 +202,13 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 760,
-  "message" : "Search returned 0 results",
-  "results" : [ ]
+  "message" : "Search returned 1 results",
+  "results" : [ "sonicpainter" ]
 }, {
   "command" : "deleteUser",
   "user" : "sonicpainter",
   "timestamp" : 900,
-  "message" : "The user sonicpainter does not exist."
+  "message" : "sonicpainter can't be deleted."
 }, {
   "command" : "deleteUser",
   "user" : "audiosage",
@@ -223,7 +223,7 @@
   "command" : "deleteUser",
   "user" : "melodicwanderer",
   "timestamp" : 960,
-  "message" : "melodicwanderer was successfully deleted."
+  "message" : "melodicwanderer can't be deleted."
 }, {
   "command" : "repeat",
   "user" : "carol19",
@@ -233,27 +233,27 @@
   "command" : "deleteUser",
   "user" : "sonicpainter",
   "timestamp" : 975,
-  "message" : "The user sonicpainter does not exist."
+  "message" : "sonicpainter can't be deleted."
 }, {
   "command" : "removePodcast",
   "user" : "musicmaven",
   "timestamp" : 980,
-  "message" : "musicmaven deleted the podcast successfully."
+  "message" : "musicmaven can't delete this podcast."
 }, {
   "command" : "deleteUser",
   "user" : "audiosage",
   "timestamp" : 1100,
-  "message" : "audiosage can't be deleted."
+  "message" : "audiosage was successfully deleted."
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 1225,
-  "message" : "The selected ID is too high."
+  "message" : "Successfully selected sonicpainter's page."
 }, {
   "command" : "deleteUser",
   "user" : "melodicwanderer",
   "timestamp" : 1500,
-  "message" : "The user melodicwanderer does not exist."
+  "message" : "melodicwanderer can't be deleted."
 }, {
   "command" : "deleteUser",
   "user" : "musicmaven",
@@ -268,7 +268,7 @@
   "command" : "deleteUser",
   "user" : "sonicpainter",
   "timestamp" : 7225,
-  "message" : "The user sonicpainter does not exist."
+  "message" : "sonicpainter can't be deleted."
 }, {
   "command" : "repeat",
   "user" : "carol19",
@@ -278,12 +278,12 @@
   "command" : "deleteUser",
   "user" : "melodicwanderer",
   "timestamp" : 7855,
-  "message" : "The user melodicwanderer does not exist."
+  "message" : "melodicwanderer was successfully deleted."
 }, {
   "command" : "deleteUser",
   "user" : "sonicpainter",
   "timestamp" : 7860,
-  "message" : "The user sonicpainter does not exist."
+  "message" : "sonicpainter can't be deleted."
 }, {
   "command" : "changePage",
   "user" : "david27",
@@ -293,7 +293,7 @@
   "command" : "deleteUser",
   "user" : "sonicpainter",
   "timestamp" : 7890,
-  "message" : "The user sonicpainter does not exist."
+  "message" : "sonicpainter was successfully deleted."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",

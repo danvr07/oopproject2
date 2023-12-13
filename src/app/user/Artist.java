@@ -3,6 +3,7 @@ package app.user;
 
 import app.Admin;
 import app.audio.Collections.Album;
+import app.audio.Files.Song;
 import app.info.Event;
 import app.info.Merch;
 
@@ -31,6 +32,16 @@ public class Artist extends User {
 
     ArrayList<Merch> merchs;
 
+    public int likes = 0;
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
 
     @Override
     public boolean isArtist() {
@@ -46,7 +57,7 @@ public class Artist extends User {
     }
 
 
-    public String addAllbum(Album album) {
+    public String addAlbum(Album album) {
         if (albums.stream().anyMatch(existingAlbum -> existingAlbum.getName()
                 .equals(album.getName()))) {
             return " has another album with the same name.";
@@ -56,7 +67,9 @@ public class Artist extends User {
                     .add(song.getName()))) {
                 return " has the same song at least twice in this album.";
             } else {
+                Admin.addSongs(album.getAllSongs());
                 albums.add(album);
+                Admin.addAlbum(album);
                 return " has added new album successfully.";
             }
         }
@@ -142,37 +155,50 @@ public class Artist extends User {
         return albums;
     }
 
-    public String AlbumsNames() {
-        String names = "";
-        for (Album album : getAlbums()) {
-            names += album.getName() + "\n";
-        }
-        return names;
-    }
+    public String removeAlbum(String albumName) {
+        List<String> loadedSongs = new ArrayList<>();
 
-    public String removeAlbum(String name) {
-
-        List<String> loadetSongs = new ArrayList<>();
-
+        // Iterăm prin utilizatorii cu player ne-pausat și adăugăm numele melodiilor în loadedSongs
         for (User user : Admin.getUsers()) {
-            //System.out.println(user.getUsername());
             if (user.getPlayer().getSource() != null && !user.getPlayer().getPaused()) {
-                //  System.out.println(user.getPlayer().getSource().getAudioFile().getName());
-                loadetSongs.add(user.getPlayer().getSource().getAudioFile().getName());
-            }
-        }
-        for (Album album : this.getAlbums()) {
-            if (album.getName().equals(name)) {
-                if (album.getAllSongs().stream().anyMatch(song -> loadetSongs
-                        .contains(song.getName())) || album.getName().equals(albumloaded.getName())) {
-                    return getUsername() + " can't delete this album.";
-                } else {
-                    albums.remove(album);
-                    return getUsername() + " deleted the album successfully.";
+                String loadedSongName = user.getPlayer().getSource().getAudioFile().getName();
+                if (!loadedSongs.contains(loadedSongName)) {
+                    loadedSongs.add(loadedSongName);
                 }
             }
         }
-        //   this.getAlbums().removeIf(album -> album.getName().equals(name));
-        return getUsername() + " doesn't have an album with the given name.";
+
+        // Verificăm dacă melodiile din loadedSongs se află în albumul cu numele dat
+        Album albumToRemove = findAlbumByName(albumName);
+        if (albumToRemove != null) {
+            for (String loadedSongName : loadedSongs) {
+                for (Song song : albumToRemove.getSongs()) {
+                    if (song.getName().equals(loadedSongName)
+                            || albumToRemove.getName().equals(albumloaded.getName())) {
+                        return getUsername() + " can't delete this album.";
+                    }
+                }
+            }
+            // Dacă nu s-a găsit nicio melodie încărcată din album, atunci albumul poate fi șters
+            Admin.getSongs().removeAll(albumToRemove.getSongs());
+            Admin.getAlbums().remove(albumToRemove);
+            return getUsername() + "deleted the album successfully.";
+
+        } else {
+            return getUsername() + " doesn't have an album with the given name.";
+        }
     }
+
+    // Metoda pentru a găsi un album după nume
+    private Album findAlbumByName(String albumName) {
+        for (Artist artist : Admin.getArtists()) {
+            for (Album album : artist.getAlbums()) {
+                if (album.getName().equals(albumName)) {
+                    return album;
+                }
+            }
+        }
+        return null;
+    }
+
 }

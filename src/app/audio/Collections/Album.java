@@ -11,7 +11,7 @@ public class Album extends AudioCollection {
     private String name;
     private String artist;
     private int releaseYear;
-    private List<SongInput> songs;
+    private List<Song> songs;
 
     private int likes;
 
@@ -23,17 +23,17 @@ public class Album extends AudioCollection {
         return likes;
     }
 
-    public List<SongInput> getSongs() {
+    public List<Song> getSongs() {
         return songs;
     }
 
-    public Album(String name, String owner, int releaseYear, List<SongInput> songs) {
+    public Album(String name, String owner, int releaseYear, List<Song> songs) {
         super(name, owner);
         this.releaseYear = releaseYear;
         this.songs = songs;
     }
 
-    public List<SongInput> getAllSongs() {
+    public List<Song> getAllSongs() {
         return songs;
     }
 
@@ -45,13 +45,14 @@ public class Album extends AudioCollection {
 
     @Override
     public AudioFile getTrackByIndex(int index) {
-        List<Song> songGet = new ArrayList<>();
-        for (SongInput song : songs) {
-            songGet.add(new Song(song.getName(), song.getDuration(), song.getAlbum(),
-                    song.getTags(), song.getLyrics(), song.getGenre(),
-                    song.getReleaseYear(), song.getArtist()));
-
-        }
-        return songGet.get(index);
+      //  List<Song> songGet = new ArrayList<>();
+//        for (SongInput song : songs) {
+//            songGet.add(new Song(song.getName(), song.getDuration(), song.getAlbum(),
+//                    song.getTags(), song.getLyrics(), song.getGenre(),
+//                    song.getReleaseYear(), song.getArtist()), song.getLikes());
+//
+//        }
+      //  return songGet.get(index);
+        return songs.get(index);
     }
 }

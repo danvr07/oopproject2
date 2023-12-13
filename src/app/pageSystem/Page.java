@@ -5,6 +5,8 @@ import app.user.User;
 public class Page {
     private User user;
 
+    private  User owner;
+
     public Page(final User user) {
         this.user = user;
     }

@@ -1,6 +1,7 @@
 package app.pageSystem;
 
 import app.audio.Collections.Album;
+import app.audio.Files.Song;
 import app.info.Event;
 import app.info.Merch;
 import app.user.Artist;

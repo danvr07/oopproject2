@@ -4,6 +4,7 @@ import app.audio.Collections.Album;
 import app.audio.Collections.PlaylistOutput;
 import app.audio.Collections.Podcast;
 import app.audio.Files.Episode;
+import app.audio.Files.Song;
 import app.info.Announcement;
 import app.player.PlayerStats;
 import app.searchBar.Filters;
@@ -470,12 +471,18 @@ public final class CommandRunner {
         if (user != null) {
             if (user.getType().equals("artist")) {
                 Artist artist = (Artist) user;
-                Admin.addSongs(commandInput.getSongs());
+                // Admin.addSongs(commandInput.getSongs());
+                List<Song> songsAlb = new ArrayList<>();
+                for (SongInput song : commandInput.getSongs()) {
+                    songsAlb.add(new Song(song.getName(), song.getDuration(), song.getAlbum(),
+                            song.getTags(), song.getLyrics(), song.getGenre(),
+                            song.getReleaseYear(), song.getArtist()));
+                }
 
                 Album album = new Album(commandInput.getName(), commandInput.getUsername(),
-                        commandInput.getReleaseYear(), commandInput.getSongs());
+                        commandInput.getReleaseYear(), songsAlb);
                 objectNode.put("message", commandInput.getUsername()
-                        + artist.addAllbum(album));
+                        + artist.addAlbum(album));
 
             } else {
 
@@ -692,7 +699,7 @@ public final class CommandRunner {
             albumNode.put("name", album.getName());
 
             ArrayNode songsArray = objectMapper.createArrayNode();
-            for (SongInput song : album.getAllSongs()) {
+            for (Song song : album.getAllSongs()) {
                 songsArray.add(song.getName());
             }
             albumNode.put("songs", songsArray);
@@ -714,7 +721,6 @@ public final class CommandRunner {
         if (user != null) {
             if (user.getType().equals("artist")) {
                 Artist artist = (Artist) user;
-                // System.out.println(commandInput.getName());
                 String message = artist.removeAlbum(commandInput.getName());
                 objectNode.put("message", message);
                 return objectNode;
@@ -729,6 +735,17 @@ public final class CommandRunner {
         }
     }
 
+    public static ObjectNode getTop5Artists(CommandInput commandInput) {
+        List<String> artists = Admin.getTop5Artists();
+
+        ObjectNode objectNode = objectMapper.createObjectNode();
+        objectNode.put("command", commandInput.getCommand());
+        objectNode.put("timestamp", commandInput.getTimestamp());
+        objectNode.put("result", objectMapper.valueToTree(artists));
+
+        return objectNode;
+    }
+
     public static ObjectNode addEvent(CommandInput commandInput) {
 
         ObjectNode objectNode = objectMapper.createObjectNode();
@@ -741,10 +758,6 @@ public final class CommandRunner {
                 Artist artist = (Artist) user;
                 String message = artist.addEvent(commandInput.getName(),
                         commandInput.getDescription(), commandInput.getDate());
-//                for(Event event: artist.getEvents()) {
-//                    System.out.println(event.getName() + " " + event.getDescription() + " " + event.getDate());
-//                }
-
                 objectNode.put("message", message);
             } else {
                 objectNode.put("message", commandInput.getUsername()
@@ -848,9 +861,14 @@ public final class CommandRunner {
         objectNode.put("user", commandInput.getUsername());
         objectNode.put("timestamp", commandInput.getTimestamp());
         if (user != null) {
-            user.switchConnectionStatus();
-            objectNode.put("message", commandInput.getUsername()
-                    + " has changed status successfully.");
+            if (user.getType().equals("regular")) {
+                user.switchConnectionStatus();
+                objectNode.put("message", commandInput.getUsername()
+                        + " has changed status successfully.");
+            } else {
+                objectNode.put("message", commandInput.getUsername()
+                        + " is not a normal user.");
+            }
         } else {
             objectNode.put("message", "The username "
                     + commandInput.getUsername() + " doesn't exist.");

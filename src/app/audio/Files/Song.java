@@ -18,6 +18,11 @@ public final class Song extends AudioFile {
     private final String artist;
     private Integer likes;
 
+
+    public void setLikes(Integer likes) {
+        this.likes = likes;
+    }
+
     /**
      * Instantiates a new Song.
      *
@@ -34,6 +39,7 @@ public final class Song extends AudioFile {
                 final ArrayList<String> tags, final String lyrics, final String genre,
                 final Integer releaseYear, final String artist) {
         super(name, duration);
+
         this.album = album;
         this.tags = tags;
         this.lyrics = lyrics;

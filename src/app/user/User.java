@@ -1,5 +1,6 @@
 package app.user;
 
+import app.Admin;
 import app.audio.Collections.AudioCollection;
 import app.audio.Collections.Playlist;
 import app.audio.Collections.PlaylistOutput;
@@ -19,6 +20,8 @@ import lombok.Getter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import static app.Admin.getSongs;
 
 /**
  * The type User.
@@ -40,16 +43,14 @@ public class User extends LibraryEntry {
     private final SearchBar searchBar;
     private boolean lastSearched;
 
+
     private boolean online = true;
 
     private String type = "regular";
 
     private Page currentPage;
 
-    public static LibraryEntry lastloaded;
-    public static LibraryEntry lastplayed;
-
-    public static User userloaded;
+    private String pageOwner = username;
     public static LibraryEntry albumloaded;
 
     public void setCurrentPage(Page currentPage) {
@@ -108,6 +109,14 @@ public class User extends LibraryEntry {
         lastSearched = false;
         type = "regular";
         currentPage = new HomePage(this);
+    }
+
+    public String getPageOwner() {
+        return pageOwner;
+    }
+
+    public void setPageOwner(String pageOwner) {
+        this.pageOwner = pageOwner;
     }
 
     /**
@@ -178,14 +187,15 @@ public class User extends LibraryEntry {
                 && ((AudioCollection) searchBar.getLastSelected()).getNumberOfTracks() == 0) {
             return "You can't load an empty audio collection!";
         }
+       // System.out.println(searchBar.getLastSearchType());
         if(searchBar.getLastSearchType().equals("album")) {
             albumloaded = searchBar.getLastSelected();
         }
 
        // System.out.println( "tip" + searchBar.getLastSearchType());
 
-        lastplayed = searchBar.getLastSelected();
-//        System.out.println("dd"  + lastplayed.getName());
+     //   lastplayed = searchBar.getLastSelected();
+      //  System.out.println("dd"  + lastplayed.getName());
        // System.out.println(searchBar.getLastSelected().getName());
 
         player.setSource(searchBar.getLastSelected(), searchBar.getLastSearchType());
@@ -194,8 +204,9 @@ public class User extends LibraryEntry {
 
         player.pause();
 
-        lastloaded = player.getCurrentAudioFile();
-        userloaded = this;
+       // lastloaded = player.getCurrentAudioFile();
+       // System.out.println("d" + lastloaded.getName());
+      //  userloaded = this;
 
         return "Playback loaded successfully.";
     }
@@ -252,7 +263,10 @@ public class User extends LibraryEntry {
                 repeatStatus = "";
             }
         }
-        lastloaded = player.getCurrentAudioFile();
+//        lastloaded = player.getCurrentAudioFile();
+//        userloaded = this;
+        //lastloaded
+
 
         return "Repeat mode changed to %s.".formatted(repeatStatus);
     }
@@ -260,6 +274,7 @@ public class User extends LibraryEntry {
     public String changePage(String page) {
         if (page.equals("Home")) {
             this.currentPage = new HomePage(this);
+            //System.out.println(this);
             return username + " accessed " + page + " successfully.";
         } else if (page.equals("LikedContent")) {
             if (this.type.equals("regular")) {
@@ -352,7 +367,7 @@ public class User extends LibraryEntry {
             return "Please load a source before liking or unliking.";
         }
 
-        if (!player.getType().equals("song") && !player.getType().equals("playlist")) {
+        if (!player.getType().equals("song") && !player.getType().equals("playlist") && !player.getType().equals("album")) {
             return "Loaded source is not a song.";
         }
 
@@ -367,6 +382,9 @@ public class User extends LibraryEntry {
 
         likedSongs.add(song);
         song.like();
+//        System.out.println(song.getName());
+//        System.out.println(song.getLikes());
+      //  Admin.getSongs().stream().filter(song1 -> song1.getName().equals(song.getName())).forEach(song1 -> song1.setLikes(song.getLikes()));
         return "Like registered successfully.";
     }
 
@@ -402,7 +420,7 @@ public class User extends LibraryEntry {
 
         player.prev();
 
-        lastloaded = player.getCurrentAudioFile();
+      //  lastloaded = player.getCurrentAudioFile();
 
         return "Returned to previous track successfully. The current track is %s."
                 .formatted(player.getCurrentAudioFile().getName());
@@ -436,7 +454,7 @@ public class User extends LibraryEntry {
             return "Please load a source before adding to or removing from the playlist.";
         }
 
-        if (player.getType().equals("podcast")) {
+        if (player.getType().equals("podcast") ) {
             return "The loaded source is not a song.";
         }
 

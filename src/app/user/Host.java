@@ -1,5 +1,6 @@
 package app.user;
 
+import app.Admin;
 import app.audio.Collections.Podcast;
 import app.info.Announcement;
 
@@ -34,12 +35,13 @@ public class Host extends User {
         }
     }
 
+
     public String removePodcast(String podcastName) {
         if (podcasts.stream().noneMatch(existingPodcast -> existingPodcast
                 .getName().equals(podcastName))) {
             return getUsername() + " doesn't have a podcast with the given name.";
         } else {
-            if (lastplayed.getName().equals(podcastName)) {
+            if (podcastPlayed(podcastName).equals("da")) {
                 return getUsername() + " can't delete this podcast.";
             } else {
                 podcasts.removeIf(existingPodcast -> existingPodcast
@@ -47,6 +49,18 @@ public class Host extends User {
                 return getUsername() + " deleted the podcast successfully.";
             }
         }
+    }
+
+
+    public String podcastPlayed(String podcastName) {
+        for (User user : Admin.getUsers()) {
+            if (user.getPlayer().getSource() != null
+                    && user.getPlayer().getSource().getAudioCollection()
+                    .getName().equals(podcastName)) {
+                return "da";
+            }
+        }
+        return "nu";
     }
 
     public String addAnnouncement(Announcement announcement) {
