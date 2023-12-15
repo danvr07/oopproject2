@@ -16,20 +16,50 @@ import fileio.input.EpisodeInput;
 import fileio.input.PodcastInput;
 import fileio.input.SongInput;
 import fileio.input.UserInput;
+import lombok.Getter;
 
-import java.util.*;
-import java.util.stream.Collectors;
-
-import static app.user.User.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * The type Admin.
  */
+
+
+//factory pattern
+interface PageFactory {
+    Page createPage(User user);
+}
+
+class ArtistPageFactory implements PageFactory {
+    @Override
+    public Page createPage(final User user) {
+        return new ArtistPage(user);
+    }
+}
+
+class HostPageFactory implements PageFactory {
+    @Override
+    public Page createPage(final User user) {
+        return new HostPage(user);
+    }
+}
+
+class HomePageFactory implements PageFactory {
+    @Override
+    public Page createPage(final User user) {
+        return new HomePage(user);
+    }
+}
+
 public final class Admin {
-    private static List<User> users = new ArrayList<>();
+    @Getter
+    public static List<User> users = new ArrayList<>();
     private static List<Song> songs = new ArrayList<>();
     private static List<Podcast> podcasts = new ArrayList<>();
-
     private static List<Album> albums = new ArrayList<>();
     private static int timestamp = 0;
     private static final int LIMIT = 5;
@@ -50,8 +80,14 @@ public final class Admin {
         }
     }
 
-    public static void addAlbum(Album album) {
-        if (albums.stream().anyMatch(existingAlbum -> existingAlbum.getName().equals(album.getName()))) {
+    /**
+     * Adds a new album to the list of albums in the application.
+     *
+     * @param album The album to be added.
+     */
+    public static void addAlbum(final Album album) {
+        if (albums.stream().anyMatch(existingAlbum -> existingAlbum
+                .getName().equals(album.getName()))) {
             return;
         }
         albums.add(album);
@@ -173,6 +209,11 @@ public final class Admin {
         return topSongs;
     }
 
+    /**
+     * Gets the top 5 artists based on the number of likes.
+     *
+     * @return The list of top 5 artists.
+     */
     public static List<String> getTop5Artists() {
         List<Artist> sortedArtists = new ArrayList<>(getArtists());
         for (Artist artist : sortedArtists) {
@@ -195,13 +236,18 @@ public final class Admin {
         return topArtists;
     }
 
+    /**
+     * Gets the top 5 albums based on the number of likes.
+     *
+     * @return The list of top 5 albums.
+     */
     public static List<String> getTop5Albums() {
         List<Album> sortedAlbums = new ArrayList<>(getAlbums());
         Set<String> uniqueAlbumNames = new HashSet<>();
 
         for (Album album : sortedAlbums) {
             if (uniqueAlbumNames.contains(album.getName())) {
-                continue;  // Skip processing if the album name has already been encountered
+                continue;
             }
 
             for (Song iter : songs) {
@@ -209,14 +255,13 @@ public final class Admin {
                     album.setLikes(album.getLikes() + iter.getLikes());
                 }
             }
-
-            uniqueAlbumNames.add(album.getName());  // Mark the album name as encountered
+            uniqueAlbumNames.add(album.getName());
         }
 
         sortedAlbums.sort(Comparator
                 .comparingInt(Album::getLikes)
                 .reversed()
-                .thenComparing(Album::getName));  // Secondary sort lexicographically
+                .thenComparing(Album::getName));
 
         List<String> topAlbums = new ArrayList<>();
 
@@ -253,6 +298,11 @@ public final class Admin {
         return topPlaylists;
     }
 
+    /**
+     * Gets a list of online users.
+     *
+     * @return The list of online users.
+     */
     public static ArrayList<String> getOnlineUsers() {
         ArrayList<String> onlineUsers = new ArrayList<>();
         for (User user : users) {
@@ -263,25 +313,36 @@ public final class Admin {
         return onlineUsers;
     }
 
-    public static String addUser(String username,
-                                 int age, String city, boolean online, String type) {
+    /**
+     * Adds a new user to the application based on the provided information.
+     *
+     * @param username The username of the new user.
+     * @param age      The age of the new user.
+     * @param city     The city of the new user.
+     * @param online   The online status of the new user.
+     * @param type     The type of the new user (e.g., "regular", "artist", "host").
+     * @return A message indicating the success or failure of the operation.
+     */
+    public static String addUser(final String username,
+                                 final int age, final String city,
+                                 final boolean online, final String type) {
         if (users.stream().anyMatch(existingUser -> existingUser.getUsername().equals(username))) {
             return "The username " + username + " is already taken.";
         } else {
             User user;
+            PageFactory pageFactory;
+            // in functie de tipul userului se creeaza pagina corespunzatoare
             if (type.equals("artist")) {
                 user = new Artist(username, age, city, online, type);
-                user.setCurrentPage(new ArtistPage(user));
-                // user.setCurrentPage(new HomePage(user));
+                pageFactory = new ArtistPageFactory();
             } else if (type.equals("host")) {
                 user = new Host(username, age, city, online, type);
-                user.setCurrentPage(new HostPage(user));
+                pageFactory = new HostPageFactory();
             } else {
                 user = new User(username, age, city);
-                user.setCurrentPage(new HomePage(user));
-
+                pageFactory = new HomePageFactory();
             }
-
+            user.setCurrentPage(pageFactory.createPage(user));
 
             users.add(user);
 
@@ -291,11 +352,11 @@ public final class Admin {
         }
     }
 
-
-    public static List<User> getUsers() {
-        return users;
-    }
-
+    /**
+     * Gets all users in the application.
+     *
+     * @return The list of all users.
+     */
     public static List<String> getAllUsers() {
         List<String> allUsers = new ArrayList<>();
 
@@ -320,117 +381,93 @@ public final class Admin {
         return allUsers;
     }
 
+    /**
+     * Deletes a user from the application based on the provided username.
+     *
+     * @param username The username of the user to be deleted.
+     * @return A message indicating the success or failure of the operation.
+     */
+    public static String deleteAllType(final String username) {
+        User user = getUser(username);
 
-    public static String deleteUser(String username) {
-        User user1 = getUser(username);
-        String pageVisit = "noPagevisit";
-
-        for (User user : users) {
-            if (user1.getCurrentPage().equals(user.getCurrentPage()) && !user.getName().equals(username)) {
-                pageVisit = user1.getName();
-            }
+        if (user == null) {
+            return "The username " + username + " doesn't exist.";
         }
-        if (user1.getType().equals("artist")) {
-            String verificare = verificare(username);
-
-            if (verificare.equals("album")) {
-                return username + " can't be deleted.";
-            } else {
-                if (!pageVisit.equals("noPagevisit")) {
-                    return username + " can't be deleted.";
-                } else {
-                    for (User user : users) {
-                        if (user.getUsername().equals(username)) {
-                            Artist artist = (Artist) user;
-                            updateSongs(artist, username);
-                            users.remove(user);
-                            return username + " was successfully deleted.";
-                        }
-                    }
-                }
-
-            }
-        } else if (user1.getType().equals("host")) {
-            if (verificare(username).equals("podcast")) {
-                return username + " can't be deleted.";
-            } else {
-                if (!pageVisit.equals("noPagevisit")) {
-                    return username + " can't be deleted.";
-                } else {
-                    for (User user : users) {
-                        if (user.getUsername().equals(username)) {
-                            Host host = (Host) user;
-                            users.remove(user);
-                            return username + " was successfully deleted.";
-                        }
-                    }
-                }
-
-            }
-        } else {
-            if (verificare(username).equals("playlist")) {
-                return username + " can't be deleted.";
-            } else {
-                for (User user : users) {
-                    if (user.getUsername().equals(username)) {
-                        updateFollowedPlaylists(user);
-                        decrementFollowers(user);
-                        //  users.remove(user);
-                        return username + " was successfully deleted.";
-                    }
-                }
-            }
-//
-        }
-
-        return "The user";
-
+        String pageVisit = getPageVisitStatus(username);
+        // In functie de tipul userului se apeleaza metoda corespunzatoare
+        // Override
+        return user.deleteUser(username, pageVisit);
 
     }
 
-    public static String verificare(String username) {
+    /**
+     * Gets the current page visit status for a user.
+     *
+     * @param username The username of the user to be checked.
+     * @return "pageVisit" if the user is currently on a page, "noPagevisit" otherwise.
+     */
+    private static String getPageVisitStatus(final String username) {
+        User userToCheck = getUser(username);
+        String pageVisit = "no";
+
         for (User user : users) {
+            if (userToCheck.getCurrentPage().equals(user.getCurrentPage())
+                    && !user.getName().equals(username)) {
+                pageVisit = "yes";
+                break;
+            }
+        }
+
+        return pageVisit;
+    }
+
+    /**
+     * Checks if a user can be deleted based on the loaded content.
+     *
+     * @param username The username of the user to be checked.
+     * @return A message indicating if the user can be deleted or not.
+     */
+    public static String verification(final String username) {
+        for (User user : users) {
+
             if (user.getPlayer().getSource() != null && !user.getPlayer().getPaused()) {
-                //   System.out.println(timestamp);
                 if (user.getPlayer().getSource().getAudioFile().getClass().equals(Song.class)) {
                     Song song = (Song) user.getPlayer().getSource().getAudioFile();
+                    // Se verifica daca exista vreun user care aculta
+                    // o meldodie a artistului care urmeaza sa fie sters
                     if (song.getArtist().equals(username)) {
-                        //System.out.println(timestamp);
                         return "album";
                     } else {
+                        // Se verifica daca exista vreun user care asculta
+                        // un playlist al userului care urmeaza sa fie sters
                         for (Playlist playlist : Admin.getUser(username).getPlaylists()) {
-                            if (playlist.getSongs().stream().anyMatch(song1 -> song1.getName().equals(user.getPlayer().getSource().getAudioFile().getName()))) {
+                            if (playlist.getSongs().stream().anyMatch(song1 -> song1
+                                    .getName().equals(user.getPlayer()
+                                            .getSource().getAudioFile().getName()))) {
                                 return "playlist";
                             }
                         }
                     }
-                } else if (user.getPlayer().getSource().getAudioCollection().getClass().equals(Podcast.class)) {
+                } else if (user.getPlayer().getSource().getAudioCollection()
+                        .getClass().equals(Podcast.class)) {
+                    // Se verifica daca exista vreun user care asculta
+                    // un podcast al hostului care urmeaza sa fie sters
                     Podcast podcast = (Podcast) user.getPlayer().getSource().getAudioCollection();
                     if (podcast.getOwner().equals(username)) {
                         return "podcast";
                     }
-                } else {
-                    Song songCheck = (Song) user.getPlayer().getSource().getAudioFile();
-                    // if (songCheck.getArtist().equals(username)) {
-                    //  String OwnerSong = ((Song) user.getPlayer().getSource().getAudioFile()).getArtist();
-
-                    for (Playlist playlist : Admin.getUser(username).getPlaylists()) {
-                        System.out.println(1);
-                        if (playlist.getSongs().stream().anyMatch(song -> song.getName().equals(user.getPlayer().getSource().getAudioFile().getName()))) {
-                            System.out.println(1);
-                            return "da";
-                        }
-                    }
-
-
                 }
             }
         }
-        return "nu";
+        return "no";
     }
 
-
-    public static void decrementFollowers(User deletedUser) {
+    /**
+     * Decreases the number of followers for playlists that were followed by the deleted user.
+     *
+     * @param deletedUser The user being deleted.
+     */
+    public static void decrementFollowers(final User deletedUser) {
         for (User user : users) {
             for (Playlist playlist : deletedUser.getFollowedPlaylists()) {
                 for (Playlist playlist1 : user.getPlaylists()) {
@@ -442,7 +479,14 @@ public final class Admin {
         }
     }
 
-    public static void updateSongs(Artist artist, String username) {
+    /**
+     * Updates the liked songs for users when an artist is deleted.
+     *
+     * @param artist   The artist being deleted.
+     * @param username The username of the artist.
+     */
+    public static void updateSongs(final Artist artist, final String username) {
+        // Se sterg toate melodiile artistului din lista de melodii
         getAlbums().removeIf(album -> album.getOwner().equals(username));
         songs.removeIf(song -> song.getArtist().equals(username));
 
@@ -455,20 +499,36 @@ public final class Admin {
         }
     }
 
-    public static void updateFollowedPlaylists(User deletedUser) {
+    /**
+     * Updates the followed playlists for users when a user is deleted.
+     *
+     * @param deletedUser The user being deleted.
+     */
+    public static void updateFollowedPlaylists(final User deletedUser) {
+        //Se sterg toate urmaririle userului din listele de urmariri
         for (Playlist playlist : deletedUser.getPlaylists()) {
             for (User user : users) {
-                user.updateFollowedPlaylists(playlist.getName());
+                user.updateFollowedPlaylistsUser(playlist.getName());
             }
         }
     }
 
-    public static void addSongs(List<Song> songsList) {
+    /**
+     * Adds a list of songs to the global list of songs.
+     *
+     * @param songsList The list of songs to be added.
+     */
+    public static void addSongs(final List<Song> songsList) {
         for (Song song : songsList) {
             songs.add(song);
         }
     }
 
+    /**
+     * Gets a list of artists in the application.
+     *
+     * @return The list of artists.
+     */
     public static ArrayList<Artist> getArtists() {
         ArrayList<Artist> artists = new ArrayList<>();
         for (User user : users) {
@@ -479,23 +539,38 @@ public final class Admin {
         return artists;
     }
 
+    /**
+     * Gets a list of albums in the application.
+     *
+     * @return The list of albums.
+     */
     public static ArrayList<Album> getAlbums() {
-        ArrayList<Album> albums = new ArrayList<>();
+        ArrayList<Album> albumsArray = new ArrayList<>();
         for (User user : users) {
             if (user.getType().equals("artist")) {
-                if ((albums.containsAll(((Artist) user).getAlbums()))) {
+                if ((albumsArray.containsAll(((Artist) user).getAlbums()))) {
                     continue;
                 }
-                albums.addAll(((Artist) user).getAlbums());
+                albumsArray.addAll(((Artist) user).getAlbums());
             }
         }
-        return albums;
+        return albumsArray;
     }
 
-    public static void addPodcast(Podcast podcast) {
+    /**
+     * Adds a new podcast to the list of podcasts in the application.
+     *
+     * @param podcast The podcast to be added.
+     */
+    public static void addPodcast(final Podcast podcast) {
         podcasts.add(podcast);
     }
 
+    /**
+     * Gets a list of hosts in the application.
+     *
+     * @return The list of hosts.
+     */
     public static ArrayList<Host> getHosts() {
         ArrayList<Host> hosts = new ArrayList<>();
         for (User user : users) {

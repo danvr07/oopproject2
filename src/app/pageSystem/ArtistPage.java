@@ -1,26 +1,28 @@
 package app.pageSystem;
 
+import app.Admin;
 import app.audio.Collections.Album;
-import app.audio.Files.Song;
 import app.info.Event;
 import app.info.Merch;
 import app.user.Artist;
 import app.user.User;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static app.Admin.getUser;
 
+@Getter
+@Setter
 public class ArtistPage extends Page {
     private String username;
     private List<Album> albums;
     private List<Merch> merchs;
-
     private List<Event> events;
 
 
-    public ArtistPage(User user) {
+    public ArtistPage(final User user) {
         super(user);
         username = user.getUsername();
         albums = ((Artist) user).getAlbums();
@@ -31,7 +33,7 @@ public class ArtistPage extends Page {
 
     @Override
     public String printPage() {
-        Artist artist = (Artist) getUser(username);
+        Artist artist = (Artist) Admin.getUser(username);
 
         List<String> albumsNames = new ArrayList<>();
         for (Album album : albums) {

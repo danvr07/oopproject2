@@ -10,6 +10,7 @@ import java.util.ArrayList;
 @Getter
 public abstract class LibraryEntry {
 
+
     public boolean isArtist() {
         return false;
     }
@@ -39,6 +40,17 @@ public abstract class LibraryEntry {
      */
     public boolean matchesName(final String nameFilter) {
         return getName().toLowerCase().startsWith(nameFilter.toLowerCase());
+    }
+
+    /**
+     * Matches description boolean.
+     *
+     * @param description the description
+     * @return the boolean
+     */
+
+    public boolean matchesDescription(final String description) {
+        return false;
     }
 
     /**

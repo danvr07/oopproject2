@@ -5,6 +5,7 @@ import app.audio.Files.AudioFile;
 import app.audio.LibraryEntry;
 import app.utils.Enums;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,12 +13,13 @@ import java.util.List;
 /**
  * The type Player.
  */
+@Getter
+@Setter
 public final class Player {
     private Enums.RepeatMode repeatMode;
     private boolean shuffle;
     private boolean paused;
     private PlayerSource source;
-    @Getter
     private String type;
     private final int skipTime = 90;
 
@@ -109,10 +111,6 @@ public final class Player {
         this.paused = true;
     }
 
-    public PlayerSource getSource() {
-        return source;
-    }
-
     /**
      * Pause.
      */
@@ -130,8 +128,8 @@ public final class Player {
             source.generateShuffleOrder(seed);
         }
 
-        if (source.getType() == Enums.PlayerSourceType.PLAYLIST ||
-                source.getType() == Enums.PlayerSourceType.ALBUM) {
+        if (source.getType() == Enums.PlayerSourceType.PLAYLIST
+                || source.getType() == Enums.PlayerSourceType.ALBUM) {
             shuffle = !shuffle;
             if (shuffle) {
                 source.updateShuffleIndex();

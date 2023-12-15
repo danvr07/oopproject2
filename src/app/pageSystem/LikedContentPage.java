@@ -13,7 +13,7 @@ public class LikedContentPage extends Page {
     private List<Playlist> followedPlaylists;
 
 
-    public LikedContentPage(User user) {
+    public LikedContentPage(final User user) {
         super(user);
         this.likedSongs = user.getLikedSongs();
         this.followedPlaylists = user.getFollowedPlaylists();

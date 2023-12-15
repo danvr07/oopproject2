@@ -15,6 +15,17 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import fileio.input.CommandInput;
+import fileio.input.SongInput;
+import lombok.Getter;
+import lombok.Setter;
+
+import static app.Admin.verification;
+import static app.Admin.updateSongs;
+import static app.Admin.users;
+
+@Getter
+@Setter
 public class Artist extends User {
 
     private static final int MIN_DAY = 1;
@@ -27,10 +38,10 @@ public class Artist extends User {
 
     private static final int DAY_FEB = 28;
 
-    ArrayList<Album> albums;
-    ArrayList<Event> events;
+    private ArrayList<Album> albums;
+    private ArrayList<Event> events;
 
-    ArrayList<Merch> merchs;
+    private ArrayList<Merch> merchs;
 
     public int likes = 0;
 
@@ -38,7 +49,7 @@ public class Artist extends User {
         return likes;
     }
 
-    public void setLikes(int likes) {
+    public void setLikes(final int likes) {
         this.likes = likes;
     }
 
@@ -49,7 +60,17 @@ public class Artist extends User {
     }
 
 
-    public Artist(String username, int age, String city, boolean online, String type) {
+    /**
+     * Instantiates a new Artist.
+     *
+     * @param username the username
+     * @param age      the age
+     * @param city     the city
+     * @param online   the online
+     * @param type     the type
+     */
+    public Artist(final String username, final int age,
+                  final String city, final boolean online, final String type) {
         super(username, age, city, online, type);
         albums = new ArrayList<>();
         events = new ArrayList<>();
@@ -57,7 +78,21 @@ public class Artist extends User {
     }
 
 
-    public String addAlbum(Album album) {
+    /**
+     * Adds a new album based on the provided command input.
+     *
+     * @param commandInput The input containing information about the album.
+     * @return A message indicating the success or failure of the album addition process.
+     */
+    public String addAlbum(final CommandInput commandInput) {
+        List<Song> songsAlbum = new ArrayList<>();
+        for (SongInput song : commandInput.getSongs()) {
+            songsAlbum.add(new Song(song.getName(), song.getDuration(), song.getAlbum(),
+                    song.getTags(), song.getLyrics(), song.getGenre(),
+                    song.getReleaseYear(), song.getArtist()));
+        }
+        Album album = new Album(commandInput.getName(), commandInput.getUsername(),
+                commandInput.getReleaseYear(), songsAlbum);
         if (albums.stream().anyMatch(existingAlbum -> existingAlbum.getName()
                 .equals(album.getName()))) {
             return " has another album with the same name.";
@@ -75,7 +110,16 @@ public class Artist extends User {
         }
     }
 
-    public String addEvent(String eventName, String eventDescription, String dateString) {
+    /**
+     * Adds a new event based on the provided command input.
+     *
+     * @param commandInput The input containing information about the event.
+     * @return A message indicating the success or failure of the event addition process.
+     */
+    public String addEvent(final CommandInput commandInput) {
+        String eventName = commandInput.getName();
+        String eventDescription = commandInput.getDescription();
+        String dateString = commandInput.getDate();
         try {
             // Verificăm validitatea datei
             Date eventDate = validateDate(dateString);
@@ -92,7 +136,13 @@ public class Artist extends User {
         }
     }
 
-    public String removeEvent(String eventName) {
+    /**
+     * Removes an event with the specified name.
+     *
+     * @param eventName The name of the event to be removed.
+     * @return A message indicating the success or failure of the event removal process.
+     */
+    public String removeEvent(final String eventName) {
         for (Event event : events) {
             if (event.getName().equals(eventName)) {
                 events.remove(event);
@@ -102,7 +152,15 @@ public class Artist extends User {
         return getUsername() + " doesn't have an event with the given name.";
     }
 
-    public Date validateDate(String dateString) throws ParseException {
+    /**
+     * Validates a date string and converts it into a Date object.
+     *
+     * @param dateString The string representation of the date to be validated and parsed.
+     * @return The parsed Date object.
+     * @throws ParseException If the date string is notin the correct format
+     *                        or contains invalid values.
+     */
+    public Date validateDate(final String dateString) throws ParseException {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         dateFormat.setLenient(false);
@@ -125,7 +183,17 @@ public class Artist extends User {
         return date;
     }
 
-    public String addMerch(String merchName, String merchDescription, int merchPrice) {
+    /**
+     * Adds new merchandise based on the provided command input.
+     *
+     * @param commandInput The input containing information about the merchandise.
+     * @return A message indicating the success or failure of the merchandise addition process.
+     */
+    public String addMerch(final CommandInput commandInput) {
+        String merchName = commandInput.getName();
+        String merchDescription = commandInput.getDescription();
+        int merchPrice = commandInput.getPrice();
+
         if (merchs.stream().anyMatch(existingMerch -> existingMerch.getName().equals(merchName))) {
             return getUsername() + " has merchandise with the same name.";
         } else {
@@ -138,24 +206,26 @@ public class Artist extends User {
         }
     }
 
-    public String formatDate(Date date) {
+
+    /**
+     * Formats the given date into a string with the pattern "dd-MM-yyyy".
+     *
+     * @param date The date to be formatted.
+     * @return A string representation of the formatted date.
+     */
+    public String formatDate(final Date date) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         return dateFormat.format(date);
     }
 
-    public ArrayList<Merch> getMerchs() {
-        return merchs;
-    }
 
-    public ArrayList<Event> getEvents() {
-        return events;
-    }
-
-    public ArrayList<Album> getAlbums() {
-        return albums;
-    }
-
-    public String removeAlbum(String albumName) {
+    /**
+     * Removes an album with the specified name if conditions allow.
+     *
+     * @param albumName The name of the album to be removed.
+     * @return A message indicating the success or failure of the removal process.
+     */
+    public String removeAlbum(final String albumName) {
         List<String> loadedSongs = new ArrayList<>();
 
         // Iterăm prin utilizatorii cu player ne-pausat și adăugăm numele melodiilor în loadedSongs
@@ -189,8 +259,13 @@ public class Artist extends User {
         }
     }
 
-    // Metoda pentru a găsi un album după nume
-    private Album findAlbumByName(String albumName) {
+    /**
+     * Finds an album with the specified name.
+     *
+     * @param albumName The name of the album to be found.
+     * @return The album with the specified name or null if no such album exists.
+     */
+    private Album findAlbumByName(final String albumName) {
         for (Artist artist : Admin.getArtists()) {
             for (Album album : artist.getAlbums()) {
                 if (album.getName().equals(albumName)) {
@@ -199,6 +274,34 @@ public class Artist extends User {
             }
         }
         return null;
+    }
+
+
+    /**
+     * Deletes an artist from the application based on the provided username.
+     *
+     * @param username  The username of the artist to be deleted.
+     * @param pageVisit The page visit status of the artist.
+     * @return A message indicating the success or failure of the operation.
+     */
+    @Override
+    public String deleteUser(final String username, final String pageVisit) {
+        String verificationResult = verification(username);
+
+        if ("album".equals(verificationResult) || !"no".equals(pageVisit)) {
+            return username + " can't be deleted.";
+        }
+
+        User user = Admin.getUser(username);
+
+        if (user != null) {
+            Artist artist = (Artist) user;
+            updateSongs(artist, username);
+            users.remove(user);
+            return username + " was successfully deleted.";
+        }
+
+        return "The username " + username + " doesn't exist.";
     }
 
 }

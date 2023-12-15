@@ -18,11 +18,6 @@ public final class Song extends AudioFile {
     private final String artist;
     private Integer likes;
 
-
-    public void setLikes(Integer likes) {
-        this.likes = likes;
-    }
-
     /**
      * Instantiates a new Song.
      *
@@ -68,6 +63,7 @@ public final class Song extends AudioFile {
         }
         return true;
     }
+
     @Override
     public boolean matchesLyrics(final String lyricFilter) {
         return this.getLyrics().toLowerCase().contains(lyricFilter.toLowerCase());

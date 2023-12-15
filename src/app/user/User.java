@@ -15,34 +15,46 @@ import app.player.PlayerStats;
 import app.searchBar.Filters;
 import app.searchBar.SearchBar;
 import app.utils.Enums;
+import fileio.input.CommandInput;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import static app.Admin.getSongs;
+import static app.Admin.verification;
+import static app.Admin.users;
+import static app.Admin.updateFollowedPlaylists;
+import static app.Admin.decrementFollowers;
+
 
 /**
  * The type User.
  */
-public class User extends LibraryEntry {
-    @Getter
-    private String username;
-    @Getter
-    private int age;
-    @Getter
-    private String city;
-    @Getter
-    private ArrayList<Playlist> playlists;
-    @Getter
-    private ArrayList<Song> likedSongs;
-    @Getter
-    private ArrayList<Playlist> followedPlaylists;
-    private final Player player;
-    private final SearchBar searchBar;
-    private boolean lastSearched;
 
+@Getter
+@Setter
+public class User extends LibraryEntry {
+
+    private String username;
+
+    private int age;
+
+    private String city;
+
+    private ArrayList<Playlist> playlists;
+
+    private ArrayList<Song> likedSongs;
+
+    private ArrayList<Playlist> followedPlaylists;
+
+    private final Player player;
+
+    private final SearchBar searchBar;
+
+    private boolean lastSearched;
 
     private boolean online = true;
 
@@ -50,37 +62,21 @@ public class User extends LibraryEntry {
 
     private Page currentPage;
 
-    private String pageOwner = username;
     public static LibraryEntry albumloaded;
 
-    public void setCurrentPage(Page currentPage) {
-        this.currentPage = currentPage;
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public Page getCurrentPage() {
-        return currentPage;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getType() {
-        return type;
-    }
-
     /**
-     * Instantiates a new User.
+     * Instantiates a new Artist/Host.
      *
      * @param username the username
      * @param age      the age
      * @param city     the city
+     * @param online   the online
+     * @param type     the type
      */
-    public User(String username, int age, String city, boolean online, String type) {
+
+    @Builder
+    public User(final String username, final int age, final String city,
+                final boolean online, final String type) {
         super(username);
         this.username = username;
         this.age = age;
@@ -93,10 +89,17 @@ public class User extends LibraryEntry {
         searchBar = new SearchBar(username);
         lastSearched = false;
         this.type = type;
-        // currentPage = new HomePage(username);
     }
 
-    public User(String username, int age, String city) {
+    /**
+     * Instantiates a new User.
+     *
+     * @param username the username
+     * @param age      the age
+     * @param city     the city
+     */
+    @Builder
+    public User(final String username, final int age, final String city) {
         super(username);
         this.username = username;
         this.age = age;
@@ -107,32 +110,23 @@ public class User extends LibraryEntry {
         player = new Player();
         searchBar = new SearchBar(username);
         lastSearched = false;
-        type = "regular";
         currentPage = new HomePage(this);
-    }
-
-    public String getPageOwner() {
-        return pageOwner;
-    }
-
-    public void setPageOwner(String pageOwner) {
-        this.pageOwner = pageOwner;
     }
 
     /**
      * Search array list.
      *
-     * @param filters the filters
-     * @param type    the type
+     * @param filters      the filters
+     * @param typeSearched the type
      * @return the array list
      */
-    public ArrayList<String> search(final Filters filters, final String type) {
+    public ArrayList<String> search(final Filters filters, final String typeSearched) {
         searchBar.clearSelection();
         player.stop();
 
         lastSearched = true;
         ArrayList<String> results = new ArrayList<>();
-        List<LibraryEntry> libraryEntries = searchBar.search(filters, type);
+        List<LibraryEntry> libraryEntries = searchBar.search(filters, typeSearched);
 
         for (LibraryEntry libraryEntry : libraryEntries) {
             results.add(libraryEntry.getName());
@@ -150,13 +144,10 @@ public class User extends LibraryEntry {
         if (!lastSearched) {
             return "Please conduct a search before making a selection.";
         }
-        ;
 
         lastSearched = false;
 
         LibraryEntry selected = searchBar.select(itemNumber);
-        //  System.out.println(selected.getName());
-        // System.out.println(selected.getName());
 
         if (selected != null && selected.isArtist()) {
             this.currentPage = ((Artist) selected).getCurrentPage();
@@ -164,8 +155,9 @@ public class User extends LibraryEntry {
             this.currentPage = ((Host) selected).getCurrentPage();
         }
 
-        if (selected == null)
+        if (selected == null) {
             return "The selected ID is too high.";
+        }
         if (selected.isArtist() || selected.isHost()) {
             return "Successfully selected %s's page.".formatted(selected.getName());
         } else {
@@ -187,26 +179,15 @@ public class User extends LibraryEntry {
                 && ((AudioCollection) searchBar.getLastSelected()).getNumberOfTracks() == 0) {
             return "You can't load an empty audio collection!";
         }
-       // System.out.println(searchBar.getLastSearchType());
-        if(searchBar.getLastSearchType().equals("album")) {
+        if (searchBar.getLastSearchType().equals("album")) {
             albumloaded = searchBar.getLastSelected();
         }
 
-       // System.out.println( "tip" + searchBar.getLastSearchType());
-
-     //   lastplayed = searchBar.getLastSelected();
-      //  System.out.println("dd"  + lastplayed.getName());
-       // System.out.println(searchBar.getLastSelected().getName());
-
         player.setSource(searchBar.getLastSelected(), searchBar.getLastSearchType());
         searchBar.clearSelection();
-        ;
+
 
         player.pause();
-
-       // lastloaded = player.getCurrentAudioFile();
-       // System.out.println("d" + lastloaded.getName());
-      //  userloaded = this;
 
         return "Playback loaded successfully.";
     }
@@ -263,18 +244,20 @@ public class User extends LibraryEntry {
                 repeatStatus = "";
             }
         }
-//        lastloaded = player.getCurrentAudioFile();
-//        userloaded = this;
-        //lastloaded
 
 
         return "Repeat mode changed to %s.".formatted(repeatStatus);
     }
 
-    public String changePage(String page) {
+    /**
+     * Changes the current page of the user based on the specified command.
+     *
+     * @param page The name of the page that the user wants to access.
+     * @return A message indicating whether the page change was successful or not.
+     */
+    public String changePage(final String page) {
         if (page.equals("Home")) {
             this.currentPage = new HomePage(this);
-            //System.out.println(this);
             return username + " accessed " + page + " successfully.";
         } else if (page.equals("LikedContent")) {
             if (this.type.equals("regular")) {
@@ -284,14 +267,6 @@ public class User extends LibraryEntry {
                 return username + " is trying to access a non-existent page.";
             }
         } else {
-//        } else if (page.equals("host")) {
-//            if (this instanceof Host) {
-//                this.currentPage = ((Host) this).getCurrentPage();
-//                return "Successfully changed page to host.";
-//            } else {
-//                return "You are not a host.";
-//            }
-//        } else {
             return "Invalid page.";
         }
     }
@@ -367,7 +342,9 @@ public class User extends LibraryEntry {
             return "Please load a source before liking or unliking.";
         }
 
-        if (!player.getType().equals("song") && !player.getType().equals("playlist") && !player.getType().equals("album")) {
+        if (!player.getType().equals("song")
+                && !player.getType().equals("playlist")
+                && !player.getType().equals("album")) {
             return "Loaded source is not a song.";
         }
 
@@ -382,9 +359,6 @@ public class User extends LibraryEntry {
 
         likedSongs.add(song);
         song.like();
-//        System.out.println(song.getName());
-//        System.out.println(song.getLikes());
-      //  Admin.getSongs().stream().filter(song1 -> song1.getName().equals(song.getName())).forEach(song1 -> song1.setLikes(song.getLikes()));
         return "Like registered successfully.";
     }
 
@@ -420,8 +394,6 @@ public class User extends LibraryEntry {
 
         player.prev();
 
-      //  lastloaded = player.getCurrentAudioFile();
-
         return "Returned to previous track successfully. The current track is %s."
                 .formatted(player.getCurrentAudioFile().getName());
     }
@@ -454,7 +426,7 @@ public class User extends LibraryEntry {
             return "Please load a source before adding to or removing from the playlist.";
         }
 
-        if (player.getType().equals("podcast") ) {
+        if (player.getType().equals("podcast")) {
             return "The loaded source is not a song.";
         }
 
@@ -515,13 +487,13 @@ public class User extends LibraryEntry {
      */
     public String follow() {
         LibraryEntry selection = searchBar.getLastSelected();
-        String type = searchBar.getLastSearchType();
+        String typeSearch = searchBar.getLastSearchType();
 
         if (selection == null) {
             return "Please select a source before following or unfollowing.";
         }
 
-        if (!type.equals("playlist")) {
+        if (!typeSearch.equals("playlist")) {
             return "The selected source is not a playlist.";
         }
 
@@ -607,15 +579,19 @@ public class User extends LibraryEntry {
         }
     }
 
+    /**
+     * Switch connection status.
+     */
     public void switchConnectionStatus() {
         this.online = !this.online;
     }
 
-    public boolean isOnline() {
-        return online;
-    }
-
-    public void updateLikedSongs(String songName) {
+    /**
+     * Update liked songs.
+     *
+     * @param songName the song name
+     */
+    public void updateLikedSongs(final String songName) {
         Iterator<Song> iterator = likedSongs.iterator();
         while (iterator.hasNext()) {
             Song song = iterator.next();
@@ -625,7 +601,12 @@ public class User extends LibraryEntry {
         }
     }
 
-    public void updateFollowedPlaylists(String playlistName) {
+    /**
+     * Update followed playlists.
+     *
+     * @param playlistName the playlist name
+     */
+    public void updateFollowedPlaylistsUser(final String playlistName) {
         Iterator<Playlist> iterator = followedPlaylists.iterator();
         while (iterator.hasNext()) {
             Playlist playlist = iterator.next();
@@ -634,4 +615,120 @@ public class User extends LibraryEntry {
             }
         }
     }
+
+
+    /**
+     * Removes an event associated with the specified event name.
+     *
+     * @param eventName The name of the event to be removed.
+     * @return A message indicating that the user is not an artist.
+     */
+    public String removeEvent(final String eventName) {
+        return " is not an artist.";
+    }
+
+    /**
+     * Adds an album based on the provided command input.
+     *
+     * @param commandInput The input containing information about the album.
+     * @return A message indicating that the user is not an artist.
+     */
+    public String addAlbum(final CommandInput commandInput) {
+        return " is not an artist.";
+    }
+
+    /**
+     * Removes an announcement associated with the specified announcement name.
+     *
+     * @param announcementName The name of the announcement to be removed.
+     * @return A message indicating that the user is not a host.
+     */
+    public String removeAnnouncement(final String announcementName) {
+        return getUsername() + " is not a host.";
+    }
+
+    /**
+     * Adds an event based on the provided command input.
+     *
+     * @param commandInput The input containing information about the event.
+     * @return A message indicating that the user is not an artist.
+     */
+    public String addEvent(final CommandInput commandInput) {
+        return getUsername() + " is not an artist.";
+    }
+
+    /**
+     * Adds an announcement based on the provided command input.
+     *
+     * @param commandInput The input containing information about the announcement.
+     * @return A message indicating that the user is not a host.
+     */
+    public String addAnnouncement(final CommandInput commandInput) {
+        return getUsername() + " is not a host.";
+    }
+
+    /**
+     * Removes a podcast associated with the specified podcast name.
+     *
+     * @param podcastName The name of the podcast to be removed.
+     * @return A message indicating that the user is not a host.
+     */
+    public String removePodcast(final String podcastName) {
+        return getUsername() + " is not a host.";
+    }
+
+    /**
+     * Adds a podcast based on the provided command input.
+     *
+     * @param commandInput The input containing information about the podcast.
+     * @return A message indicating that the user is not a host.
+     */
+    public String addPodcast(final CommandInput commandInput) {
+        return " is not a host.";
+    }
+
+    /**
+     * Adds merchandise based on the provided command input.
+     *
+     * @param commandInput The input containing information about the merchandise.
+     * @return A message indicating that the user is not an artist.
+     */
+    public String addMerch(final CommandInput commandInput) {
+        return getUsername() + " is not an artist.";
+    }
+
+    /**
+     * Removes an album associated with the specified album name.
+     *
+     * @param albumName The name of the album to be removed.
+     * @return A message indicating that the user is not an artist.
+     */
+    public String removeAlbum(final String albumName) {
+        return getUsername() + " is not an artist.";
+    }
+
+    /**
+     * Deletes a regular user from the application based on the provided username.
+     *
+     * @param username The username of the user to be deleted.
+     * @return A message indicating the success or failure of the operation.
+     */
+    public String deleteUser(final String username, final String pageVisited) {
+        if (verification(username).equals("playlist")) {
+            return username + " can't be deleted.";
+        }
+        User user = Admin.getUser(username);
+
+        if (user != null) {
+            updateFollowedPlaylists(user);
+            decrementFollowers(user);
+            users.remove(user);
+            return username + " was successfully deleted.";
+        }
+
+        return "The username " + username + " doesn't exist.";
+    }
+
 }
+
+

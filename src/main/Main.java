@@ -17,6 +17,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
 
+
 /**
  * The entry point to this homework. It runs the checker that tests your implentation.
  */
@@ -78,11 +79,14 @@ public final class Main {
                         + filePath1),
                 CommandInput[].class);
         ArrayNode outputs = objectMapper.createArrayNode();
+
+
+//                  A fost folosit pentru a rula cate un singur test
 //
-//               if(!(CheckerConstants.TESTS_PATH + filePath1).equals(CheckerConstants.TESTS_PATH + "test15_etapa2_complex.json")) {
-//                   // System.out.println(CheckerConstants.TESTS_PATH + filePath1);
-//                   return;
-//               }
+//        if (!(CheckerConstants.TESTS_PATH + filePath1)
+//                .equals(CheckerConstants.TESTS_PATH + "test15_etapa2_complex.json")) {
+//            return;
+//        }
 
 
         Admin.setUsers(library.getUsers());

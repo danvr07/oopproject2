@@ -1,5 +1,6 @@
 package app.pageSystem;
 
+import app.Admin;
 import app.audio.Collections.Podcast;
 import app.audio.Files.Episode;
 import app.info.Announcement;
@@ -8,27 +9,19 @@ import app.user.User;
 
 import java.util.List;
 
-import static app.Admin.getUser;
 
 public class HostPage extends Page {
 
     private String username;
 
-    private List<Podcast> podcasts;
-
-    private List<Announcement> announcements;
-
-    public HostPage(User user) {
+    public HostPage(final User user) {
         super(user);
         username = user.getUsername();
-        podcasts = ((Host) user).getPodcasts();
-        announcements = ((Host) user).getAnnouncements();
     }
-
 
     @Override
     public String printPage() {
-        Host host = (Host) getUser(username);
+        Host host = (Host) Admin.getUser(username);
 
         StringBuilder result = new StringBuilder();
 
