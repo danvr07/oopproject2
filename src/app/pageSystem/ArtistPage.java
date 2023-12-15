@@ -15,7 +15,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ArtistPage extends Page {
+public class ArtistPage implements Page {
     private String username;
     private List<Album> albums;
     private List<Merch> merchs;
@@ -23,7 +23,6 @@ public class ArtistPage extends Page {
 
 
     public ArtistPage(final User user) {
-        super(user);
         username = user.getUsername();
         albums = ((Artist) user).getAlbums();
         merchs = ((Artist) user).getMerchs();

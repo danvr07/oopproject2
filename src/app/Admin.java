@@ -396,7 +396,7 @@ public final class Admin {
         String pageVisit = getPageVisitStatus(username);
         // In functie de tipul userului se apeleaza metoda corespunzatoare
         // Override
-        return user.deleteUser(username, pageVisit);
+        return user.deleteThis(username, pageVisit);
 
     }
 

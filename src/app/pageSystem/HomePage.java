@@ -10,7 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 
 
-public class HomePage extends Page {
+public class HomePage implements Page {
 
     private static final int MAX = 5;
 
@@ -18,7 +18,6 @@ public class HomePage extends Page {
     private List<Playlist> followedPlaylists;
 
     public HomePage(final User user) {
-        super(user);
         this.likedSongs = user.getLikedSongs();
         this.followedPlaylists = user.getFollowedPlaylists();
 

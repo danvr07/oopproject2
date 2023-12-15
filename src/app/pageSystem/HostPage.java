@@ -10,12 +10,11 @@ import app.user.User;
 import java.util.List;
 
 
-public class HostPage extends Page {
+public class HostPage implements Page {
 
     private String username;
 
     public HostPage(final User user) {
-        super(user);
         username = user.getUsername();
     }
 

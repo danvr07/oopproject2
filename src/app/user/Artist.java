@@ -285,7 +285,7 @@ public class Artist extends User {
      * @return A message indicating the success or failure of the operation.
      */
     @Override
-    public String deleteUser(final String username, final String pageVisit) {
+    public String deleteThis(final String username, final String pageVisit) {
         String verificationResult = verification(username);
 
         if ("album".equals(verificationResult) || !"no".equals(pageVisit)) {

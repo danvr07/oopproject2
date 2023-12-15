@@ -713,7 +713,7 @@ public class User extends LibraryEntry {
      * @param username The username of the user to be deleted.
      * @return A message indicating the success or failure of the operation.
      */
-    public String deleteUser(final String username, final String pageVisited) {
+    public String deleteThis(final String username, final String pageVisited) {
         if (verification(username).equals("playlist")) {
             return username + " can't be deleted.";
         }

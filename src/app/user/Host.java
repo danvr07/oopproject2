@@ -24,8 +24,8 @@ public class Host extends User {
     }
 
 
-    private ArrayList<Podcast> podcasts;
-    private ArrayList<Announcement> announcements;
+    private final ArrayList<Podcast> podcasts;
+    private final ArrayList<Announcement> announcements;
 
     /**
      * Instantiates a new Host.
@@ -141,7 +141,7 @@ public class Host extends User {
      * @return A message indicating the success or failure of the operation.
      */
     @Override
-    public String deleteUser(final String username, final String pageVisit) {
+    public String deleteThis(final String username, final String pageVisit) {
         if (verification(username).equals("podcast") || !pageVisit.equals("no")) {
             return username + " can't be deleted.";
         }

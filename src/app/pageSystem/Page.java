@@ -1,33 +1,14 @@
 package app.pageSystem;
 
-import app.user.User;
-import lombok.Getter;
-import lombok.Setter;
-
 /**
- * The class represents a content page associated with a user.
- * It contains information about the user whose page it is and the owner of the page.
+ * The class represents an interface for page associated with a user.
  */
 
-@Getter
-@Setter
-public class Page {
-    /**
-     * The user associated with this page.
-     */
-    private User user;
-
-    public Page(final User user) {
-        this.user = user;
-    }
+public interface Page {
 
     /**
-     * Generates and returns a string representation of the page's content.
-     *
-     * @return A string representing the page's content.
+     * Print page
      */
-    public String printPage() {
-        return "Pagina de conținuturi" + user.getUsername();
-    }
+    String printPage();
 
 }
