@@ -5,10 +5,7 @@ import app.audio.Collections.Playlist;
 import app.audio.Collections.Podcast;
 import app.audio.Files.Episode;
 import app.audio.Files.Song;
-import app.pageSystem.ArtistPage;
-import app.pageSystem.HomePage;
-import app.pageSystem.HostPage;
-import app.pageSystem.Page;
+import app.pageSystem.PageFactory;
 import app.user.Artist;
 import app.user.Host;
 import app.user.User;
@@ -27,33 +24,6 @@ import java.util.Set;
 /**
  * The type Admin.
  */
-
-
-//factory pattern
-interface PageFactory {
-    Page createPage(User user);
-}
-
-class ArtistPageFactory implements PageFactory {
-    @Override
-    public Page createPage(final User user) {
-        return new ArtistPage(user);
-    }
-}
-
-class HostPageFactory implements PageFactory {
-    @Override
-    public Page createPage(final User user) {
-        return new HostPage(user);
-    }
-}
-
-class HomePageFactory implements PageFactory {
-    @Override
-    public Page createPage(final User user) {
-        return new HomePage(user);
-    }
-}
 
 public final class Admin {
     @Getter
@@ -330,19 +300,18 @@ public final class Admin {
             return "The username " + username + " is already taken.";
         } else {
             User user;
-            PageFactory pageFactory;
+           // Page pageFactory;
             // in functie de tipul userului se creeaza pagina corespunzatoare
             if (type.equals("artist")) {
                 user = new Artist(username, age, city, online, type);
-                pageFactory = new ArtistPageFactory();
+               user.setCurrentPage(PageFactory.createPage(user));
             } else if (type.equals("host")) {
                 user = new Host(username, age, city, online, type);
-                pageFactory = new HostPageFactory();
+                user.setCurrentPage(PageFactory.createPage(user));
             } else {
                 user = new User(username, age, city);
-                pageFactory = new HomePageFactory();
+                user.setCurrentPage(PageFactory.createPage(user));
             }
-            user.setCurrentPage(pageFactory.createPage(user));
 
             users.add(user);
 

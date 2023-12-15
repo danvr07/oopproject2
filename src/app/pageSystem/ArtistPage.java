@@ -15,7 +15,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ArtistPage implements Page {
+public final class ArtistPage implements Page {
     private String username;
     private List<Album> albums;
     private List<Merch> merchs;

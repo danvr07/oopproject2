@@ -10,7 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 
 
-public class HomePage implements Page {
+public final class HomePage implements Page {
 
     private static final int MAX = 5;
 

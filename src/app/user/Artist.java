@@ -26,7 +26,7 @@ import static app.Admin.users;
 
 @Getter
 @Setter
-public class Artist extends User {
+public final class Artist extends User {
 
     private static final int MIN_DAY = 1;
     private static final int MAX_DAY = 31;

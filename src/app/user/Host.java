@@ -15,7 +15,7 @@ import static app.Admin.users;
 import static app.Admin.verification;
 
 @Getter
-public class Host extends User {
+public final class Host extends User {
 
 
     @Override

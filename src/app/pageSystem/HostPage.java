@@ -10,7 +10,7 @@ import app.user.User;
 import java.util.List;
 
 
-public class HostPage implements Page {
+public final class HostPage implements Page {
 
     private String username;
 

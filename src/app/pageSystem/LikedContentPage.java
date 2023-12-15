@@ -7,7 +7,7 @@ import app.user.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LikedContentPage implements Page {
+public final class LikedContentPage implements Page {
 
     private final List<Song> likedSongs;
     private final List<Playlist> followedPlaylists;
