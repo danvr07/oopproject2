@@ -1,4 +1,5 @@
 Proiect GlobalWaves - Pagination
+O aplicație asemănătoare ca funcționalități cu Spotify, simulând diferite acțiuni făcute de utilizatori. Aceste acțiuni vor fi simulate folosind niște comenzi primite în fișierele de input. Astfel, perspectiva din care rezolvați tema este aceea a unui admin, ce percepe toate acțiunile realizate de utilizatori și poate genera diferite rapoarte legate de toți utilizatorii.
 
    
       AllUsers:
