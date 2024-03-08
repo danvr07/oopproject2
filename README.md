@@ -1,10 +1,6 @@
-Proiect GlobalWaves - Etapa 2 - Pagination
+Proiect GlobalWaves - Pagination
 
-      Pentru implementarea acestei teme am folosit scheletul oferit de echipa OOP
-   Implementarea temei am incercat sa o fac cat mai apropiata de ideea scheletului
-   anterior  ceea ce m a ajutat sa adaug noi functionalitati
-   la search, select, load, etc... fara a face schimbari majore in cod.
-
+   
       AllUsers:
    Stiind ca Hostii si Artistii sunt Useri care au niste
    proprietati in plus, am hotarat sa folosesc mosternire,
